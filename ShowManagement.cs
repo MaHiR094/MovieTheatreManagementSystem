@@ -15,18 +15,12 @@ namespace MovieTheatreManagementSystem
             InitializeComponent();
         }
 
-        // =========================
-        // FORM LOAD
-        // =========================
         private void ShowManagement_Load_1(object sender, EventArgs e)
         {
             LoadHalls();
             LoadShows();
         }
 
-        // =========================
-        // LOAD HALLS
-        // =========================
         private void LoadHalls()
         {
             cmbHallNo.Items.Clear();
@@ -35,9 +29,6 @@ namespace MovieTheatreManagementSystem
             cmbHallNo.Items.Add("Hall B");
         }
 
-        // =========================
-        // HALL PRICE LOGIC
-        // =========================
         private void cmbHallNo_SelectedIndexChanged(object sender, EventArgs e)
         {
             SetPrice();
@@ -58,9 +49,6 @@ namespace MovieTheatreManagementSystem
                 txtShowPrice.Text = "";
         }
 
-        // =========================
-        // LOAD SHOWS
-        // =========================
         private void LoadShows()
         {
             string query =
@@ -89,9 +77,6 @@ namespace MovieTheatreManagementSystem
             }
         }
 
-        // =========================
-        // ADD SHOW
-        // =========================
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtMovie.Text) ||
@@ -109,9 +94,6 @@ namespace MovieTheatreManagementSystem
 
             int hallId = (cmbHallNo.Text == "Hall A") ? 1 : 2;
 
-            // =========================
-            // CHECK SCHEDULE CONFLICT
-            // =========================
             string checkQuery =
                 "SELECT * FROM Shows WHERE " +
                 "HallId=" + hallId + " AND " +
@@ -131,9 +113,6 @@ namespace MovieTheatreManagementSystem
                 return;
             }
 
-            // =========================
-            // INSERT SHOW
-            // =========================
             string query =
                 "INSERT INTO Shows " +
                 "(ShowDate, ShowTime, ShowPrice, HallId, MovieName) " +
@@ -167,9 +146,6 @@ namespace MovieTheatreManagementSystem
             ClearFields();
         }
 
-        // =========================
-        // UPDATE SHOW
-        // =========================
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtShowId.Text))
@@ -200,9 +176,6 @@ namespace MovieTheatreManagementSystem
 
             int showId = Convert.ToInt32(txtShowId.Text);
 
-            // =========================
-            // CHECK UPDATE CONFLICT
-            // =========================
             string checkQuery =
                 "SELECT * FROM Shows WHERE " +
                 "HallId=" + hallId + " AND " +
@@ -258,9 +231,6 @@ namespace MovieTheatreManagementSystem
             ClearFields();
         }
 
-        // =========================
-        // DELETE SHOW
-        // =========================
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvShowInfo.CurrentRow == null)
@@ -292,17 +262,11 @@ namespace MovieTheatreManagementSystem
                 Convert.ToInt32(
                     dgvShowInfo.CurrentRow.Cells["ShowId"].Value);
 
-            // =========================
-            // DELETE RELATED TICKETS
-            // =========================
             string deleteTickets =
                 "DELETE FROM Ticket WHERE ShowId=" + showId;
 
             db.ExecuteNonQuery(deleteTickets);
 
-            // =========================
-            // DELETE SHOW
-            // =========================
             string deleteShow =
                 "DELETE FROM Shows WHERE ShowId=" + showId;
 
@@ -329,9 +293,6 @@ namespace MovieTheatreManagementSystem
             ClearFields();
         }
 
-        // =========================
-        // GRID CELL CLICK
-        // =========================
         private void dgvShowInfo_CellClick(
             object sender,
             DataGridViewCellEventArgs e)
@@ -362,9 +323,6 @@ namespace MovieTheatreManagementSystem
                 row.Cells["ShowPrice"].Value?.ToString();
         }
 
-        // =========================
-        // CLEAR FIELDS
-        // =========================
         private void ClearFields()
         {
             txtShowId.Text = "Auto Generated";
@@ -391,10 +349,6 @@ namespace MovieTheatreManagementSystem
         {
 
         }
-
-        // =========================
-        // DOUBLE CLICK GRID
-        // =========================
         private void dgvShowInfo_CellContentDoubleClick(
             object sender,
             DataGridViewCellEventArgs e)
