@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2FDF83A8-C54E-442D-94A8-F151BB40F2ED}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MovieTheatreManagementSystem</RootNamespace>
+    <AssemblyName>MovieTheatreManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBAccessHelper.cs" />
+    <Compile Include="HallManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HallManagement.Designer.cs">
+      <DependentUpon>HallManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentDetails.Designer.cs">
+      <DependentUpon>PaymentDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seat.Designer.cs">
+      <DependentUpon>Seat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowManagement.Designer.cs">
+      <DependentUpon>ShowManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TheatreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TheatreForm.Designer.cs">
+      <DependentUpon>TheatreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ticket.Designer.cs">
+      <DependentUpon>Ticket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManagementForm.Designer.cs">
+      <DependentUpon>UserManagementForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="HallManagement.resx">
+      <DependentUpon>HallManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentDetails.resx">
+      <DependentUpon>PaymentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Seat.resx">
+      <DependentUpon>Seat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowManagement.resx">
+      <DependentUpon>ShowManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TheatreForm.resx">
+      <DependentUpon>TheatreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ticket.resx">
+      <DependentUpon>Ticket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManagementForm.resx">
+      <DependentUpon>UserManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Location64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Theatre64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hall64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shows64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout64.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Payment64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ticket64.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Booking64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO80.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO60.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Batman1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avengers1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spider-Man1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thor1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\360_F_657407241_v8RaCiTg1hlpt0Rt2hKBOV32IG6s3T2e.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
