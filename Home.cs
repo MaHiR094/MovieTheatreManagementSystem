@@ -32,14 +32,13 @@ namespace MovieTheatreManagementSystem
             if (role == 2) 
             {
                 HideButtonRow(btnTRE);
-                HideButtonRow(btnHL);
             }
             else if (role == 3)
             {
                 HideButtonRow(btnTRE);
                 HideButtonRow(btnHL);
                 HideButtonRow(btnSH);
-                HideButtonRow(btnUserinfo);
+                btnUserinfo.Visible = false;
             }
         }
 

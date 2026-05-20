@@ -31,19 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.lblDB2 = new System.Windows.Forms.Label();
             this.lblDB1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblDB3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblDB4 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblDB6 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblDB5 = new System.Windows.Forms.Label();
             this.plhome = new System.Windows.Forms.Panel();
-            this.PB4 = new System.Windows.Forms.PictureBox();
-            this.PB3 = new System.Windows.Forms.PictureBox();
-            this.PB2 = new System.Windows.Forms.PictureBox();
-            this.PB1 = new System.Windows.Forms.PictureBox();
             this.pbLOGO = new System.Windows.Forms.PictureBox();
             this.btnLOG = new System.Windows.Forms.Button();
             this.btnPAY = new System.Windows.Forms.Button();
@@ -57,16 +45,16 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnUserinfo = new System.Windows.Forms.Button();
             this.tblpnlBtns = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PB4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB1)).BeginInit();
+            this.PB1 = new System.Windows.Forms.PictureBox();
+            this.PB2 = new System.Windows.Forms.PictureBox();
+            this.PB3 = new System.Windows.Forms.PictureBox();
+            this.PB4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLOGO)).BeginInit();
             this.tblpnlBtns.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PB1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB4)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDB2
@@ -95,158 +83,17 @@
             this.lblDB1.Text = "Dashboard";
             this.lblDB1.UseWaitCursor = true;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblDB3);
-            this.panel1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.panel1.Location = new System.Drawing.Point(329, 479);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(185, 200);
-            this.panel1.TabIndex = 17;
-            this.panel1.UseWaitCursor = true;
-            // 
-            // lblDB3
-            // 
-            this.lblDB3.AutoSize = true;
-            this.lblDB3.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.lblDB3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDB3.ForeColor = System.Drawing.Color.Honeydew;
-            this.lblDB3.Location = new System.Drawing.Point(14, 24);
-            this.lblDB3.Name = "lblDB3";
-            this.lblDB3.Size = new System.Drawing.Size(134, 20);
-            this.lblDB3.TabIndex = 16;
-            this.lblDB3.Text = "Total Bookings";
-            this.lblDB3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblDB3.UseWaitCursor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.lblDB4);
-            this.panel2.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.panel2.Location = new System.Drawing.Point(550, 479);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(185, 200);
-            this.panel2.TabIndex = 18;
-            this.panel2.UseWaitCursor = true;
-            // 
-            // lblDB4
-            // 
-            this.lblDB4.AutoSize = true;
-            this.lblDB4.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.lblDB4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDB4.ForeColor = System.Drawing.Color.Honeydew;
-            this.lblDB4.Location = new System.Drawing.Point(11, 24);
-            this.lblDB4.Name = "lblDB4";
-            this.lblDB4.Size = new System.Drawing.Size(142, 20);
-            this.lblDB4.TabIndex = 16;
-            this.lblDB4.Text = "Today Bookings";
-            this.lblDB4.UseWaitCursor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.lblDB6);
-            this.panel3.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.panel3.Location = new System.Drawing.Point(1001, 479);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(199, 200);
-            this.panel3.TabIndex = 20;
-            this.panel3.UseWaitCursor = true;
-            // 
-            // lblDB6
-            // 
-            this.lblDB6.AutoSize = true;
-            this.lblDB6.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.lblDB6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDB6.ForeColor = System.Drawing.Color.Honeydew;
-            this.lblDB6.Location = new System.Drawing.Point(18, 24);
-            this.lblDB6.Name = "lblDB6";
-            this.lblDB6.Size = new System.Drawing.Size(125, 20);
-            this.lblDB6.TabIndex = 16;
-            this.lblDB6.Text = "Today Income";
-            this.lblDB6.UseWaitCursor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.lblDB5);
-            this.panel4.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.panel4.Location = new System.Drawing.Point(776, 479);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(185, 200);
-            this.panel4.TabIndex = 19;
-            this.panel4.UseWaitCursor = true;
-            // 
-            // lblDB5
-            // 
-            this.lblDB5.AutoSize = true;
-            this.lblDB5.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.lblDB5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDB5.ForeColor = System.Drawing.Color.Honeydew;
-            this.lblDB5.Location = new System.Drawing.Point(25, 24);
-            this.lblDB5.Name = "lblDB5";
-            this.lblDB5.Size = new System.Drawing.Size(117, 20);
-            this.lblDB5.TabIndex = 16;
-            this.lblDB5.Text = "Total Income";
-            this.lblDB5.UseWaitCursor = true;
-            // 
             // plhome
             // 
             this.plhome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.plhome.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.plhome.ForeColor = System.Drawing.Color.Black;
-            this.plhome.Location = new System.Drawing.Point(296, -2);
+            this.plhome.Location = new System.Drawing.Point(327, -2);
             this.plhome.Name = "plhome";
-            this.plhome.Size = new System.Drawing.Size(1186, 809);
+            this.plhome.Size = new System.Drawing.Size(1155, 809);
             this.plhome.TabIndex = 22;
             this.plhome.UseWaitCursor = true;
             this.plhome.Paint += new System.Windows.Forms.PaintEventHandler(this.plhome_Paint);
-            // 
-            // PB4
-            // 
-            this.PB4.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.PB4.Image = global::MovieTheatreManagementSystem.Properties.Resources.Spider_Man1;
-            this.PB4.Location = new System.Drawing.Point(1001, 124);
-            this.PB4.Name = "PB4";
-            this.PB4.Size = new System.Drawing.Size(199, 344);
-            this.PB4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PB4.TabIndex = 14;
-            this.PB4.TabStop = false;
-            this.PB4.UseWaitCursor = true;
-            // 
-            // PB3
-            // 
-            this.PB3.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.PB3.Image = global::MovieTheatreManagementSystem.Properties.Resources.Avengers1;
-            this.PB3.Location = new System.Drawing.Point(774, 124);
-            this.PB3.Name = "PB3";
-            this.PB3.Size = new System.Drawing.Size(188, 344);
-            this.PB3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PB3.TabIndex = 13;
-            this.PB3.TabStop = false;
-            this.PB3.UseWaitCursor = true;
-            // 
-            // PB2
-            // 
-            this.PB2.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.PB2.Image = ((System.Drawing.Image)(resources.GetObject("PB2.Image")));
-            this.PB2.Location = new System.Drawing.Point(552, 124);
-            this.PB2.Name = "PB2";
-            this.PB2.Size = new System.Drawing.Size(188, 344);
-            this.PB2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PB2.TabIndex = 12;
-            this.PB2.TabStop = false;
-            this.PB2.UseWaitCursor = true;
-            // 
-            // PB1
-            // 
-            this.PB1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.PB1.Image = global::MovieTheatreManagementSystem.Properties.Resources.Batman1;
-            this.PB1.Location = new System.Drawing.Point(329, 124);
-            this.PB1.Name = "PB1";
-            this.PB1.Size = new System.Drawing.Size(188, 344);
-            this.PB1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PB1.TabIndex = 11;
-            this.PB1.TabStop = false;
-            this.PB1.UseWaitCursor = true;
             // 
             // pbLOGO
             // 
@@ -486,6 +333,54 @@
             this.tblpnlBtns.TabIndex = 27;
             this.tblpnlBtns.UseWaitCursor = true;
             // 
+            // PB1
+            // 
+            this.PB1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.PB1.Image = global::MovieTheatreManagementSystem.Properties.Resources.Batman1;
+            this.PB1.Location = new System.Drawing.Point(329, 124);
+            this.PB1.Name = "PB1";
+            this.PB1.Size = new System.Drawing.Size(188, 572);
+            this.PB1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PB1.TabIndex = 11;
+            this.PB1.TabStop = false;
+            this.PB1.UseWaitCursor = true;
+            // 
+            // PB2
+            // 
+            this.PB2.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.PB2.Image = ((System.Drawing.Image)(resources.GetObject("PB2.Image")));
+            this.PB2.Location = new System.Drawing.Point(552, 124);
+            this.PB2.Name = "PB2";
+            this.PB2.Size = new System.Drawing.Size(188, 572);
+            this.PB2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PB2.TabIndex = 12;
+            this.PB2.TabStop = false;
+            this.PB2.UseWaitCursor = true;
+            // 
+            // PB3
+            // 
+            this.PB3.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.PB3.Image = global::MovieTheatreManagementSystem.Properties.Resources.Avengers1;
+            this.PB3.Location = new System.Drawing.Point(774, 124);
+            this.PB3.Name = "PB3";
+            this.PB3.Size = new System.Drawing.Size(188, 572);
+            this.PB3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PB3.TabIndex = 13;
+            this.PB3.TabStop = false;
+            this.PB3.UseWaitCursor = true;
+            // 
+            // PB4
+            // 
+            this.PB4.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.PB4.Image = global::MovieTheatreManagementSystem.Properties.Resources.Spider_Man1;
+            this.PB4.Location = new System.Drawing.Point(1001, 124);
+            this.PB4.Name = "PB4";
+            this.PB4.Size = new System.Drawing.Size(199, 572);
+            this.PB4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PB4.TabIndex = 14;
+            this.PB4.TabStop = false;
+            this.PB4.UseWaitCursor = true;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -494,16 +389,12 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1516, 844);
-            this.Controls.Add(this.tblpnlBtns);
             this.Controls.Add(this.plhome);
+            this.Controls.Add(this.tblpnlBtns);
             this.Controls.Add(this.btnUserinfo);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pbLOGO);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblDB1);
             this.Controls.Add(this.lblDB2);
             this.Controls.Add(this.PB4);
@@ -518,20 +409,12 @@
             this.Text = "Movie Ticket Booking System";
             this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.Home_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PB4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLOGO)).EndInit();
             this.tblpnlBtns.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PB1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -548,25 +431,17 @@
         private System.Windows.Forms.Button btnLOG;
         private System.Windows.Forms.Button btnPAY;
         private System.Windows.Forms.PictureBox pbLOGO;
-        private System.Windows.Forms.PictureBox PB1;
-        private System.Windows.Forms.PictureBox PB2;
-        private System.Windows.Forms.PictureBox PB4;
-        private System.Windows.Forms.PictureBox PB3;
         private System.Windows.Forms.Label lblDB2;
         private System.Windows.Forms.Label lblDB1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label lblDB3;
-        private System.Windows.Forms.Label lblDB4;
-        private System.Windows.Forms.Label lblDB6;
-        private System.Windows.Forms.Label lblDB5;
         private System.Windows.Forms.Panel plhome;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnUserinfo;
         private System.Windows.Forms.TableLayoutPanel tblpnlBtns;
+        private System.Windows.Forms.PictureBox PB1;
+        private System.Windows.Forms.PictureBox PB2;
+        private System.Windows.Forms.PictureBox PB3;
+        private System.Windows.Forms.PictureBox PB4;
     }
 }
 
