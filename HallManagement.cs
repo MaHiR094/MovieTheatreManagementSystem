@@ -237,7 +237,6 @@ namespace MovieTheatreManagementSystem
                 {
                     DataGridViewRow row = dgvHallInfo.Rows[e.RowIndex];
 
-                    txtHallId.Text = row.Cells["HallId"].Value.ToString();
                     cmbHallName.Text = row.Cells["HallName"].Value.ToString();
                     cmbHallType.Text = row.Cells["HallType"].Value.ToString();
                     cmbTheatre.Text = row.Cells["TheatreName"].Value.ToString();

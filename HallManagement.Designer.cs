@@ -190,11 +190,15 @@
             // 
             // dgvHallInfo
             // 
+            this.dgvHallInfo.AllowUserToAddRows = false;
+            this.dgvHallInfo.AllowUserToDeleteRows = false;
             this.dgvHallInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHallInfo.Location = new System.Drawing.Point(17, 433);
             this.dgvHallInfo.Name = "dgvHallInfo";
+            this.dgvHallInfo.ReadOnly = true;
             this.dgvHallInfo.RowHeadersWidth = 51;
             this.dgvHallInfo.RowTemplate.Height = 24;
+            this.dgvHallInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHallInfo.Size = new System.Drawing.Size(895, 300);
             this.dgvHallInfo.TabIndex = 39;
             this.dgvHallInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHallInfo_CellContentClick);

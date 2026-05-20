@@ -216,6 +216,7 @@
             this.dgvTheatreInfo.ReadOnly = true;
             this.dgvTheatreInfo.RowHeadersWidth = 51;
             this.dgvTheatreInfo.RowTemplate.Height = 24;
+            this.dgvTheatreInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTheatreInfo.Size = new System.Drawing.Size(863, 357);
             this.dgvTheatreInfo.TabIndex = 30;
             this.dgvTheatreInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTheatreInfo_CellContentClick);

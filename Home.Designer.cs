@@ -55,6 +55,7 @@
             this.btnDB = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnUserinfo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -72,10 +73,9 @@
             this.lblDB2.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.lblDB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDB2.ForeColor = System.Drawing.Color.Honeydew;
-            this.lblDB2.Location = new System.Drawing.Point(388, 104);
-            this.lblDB2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDB2.Location = new System.Drawing.Point(323, 87);
             this.lblDB2.Name = "lblDB2";
-            this.lblDB2.Size = new System.Drawing.Size(166, 25);
+            this.lblDB2.Size = new System.Drawing.Size(142, 20);
             this.lblDB2.TabIndex = 15;
             this.lblDB2.Text = "Running Movies";
             this.lblDB2.UseWaitCursor = true;
@@ -86,10 +86,9 @@
             this.lblDB1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.lblDB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDB1.ForeColor = System.Drawing.Color.Honeydew;
-            this.lblDB1.Location = new System.Drawing.Point(388, 30);
-            this.lblDB1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDB1.Location = new System.Drawing.Point(323, 25);
             this.lblDB1.Name = "lblDB1";
-            this.lblDB1.Size = new System.Drawing.Size(202, 40);
+            this.lblDB1.Size = new System.Drawing.Size(170, 36);
             this.lblDB1.TabIndex = 16;
             this.lblDB1.Text = "Dashboard";
             this.lblDB1.UseWaitCursor = true;
@@ -98,10 +97,9 @@
             // 
             this.panel1.Controls.Add(this.lblDB3);
             this.panel1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.panel1.Location = new System.Drawing.Point(395, 575);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(329, 479);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(222, 240);
+            this.panel1.Size = new System.Drawing.Size(185, 200);
             this.panel1.TabIndex = 17;
             this.panel1.UseWaitCursor = true;
             // 
@@ -111,10 +109,9 @@
             this.lblDB3.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.lblDB3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDB3.ForeColor = System.Drawing.Color.Honeydew;
-            this.lblDB3.Location = new System.Drawing.Point(17, 29);
-            this.lblDB3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDB3.Location = new System.Drawing.Point(14, 24);
             this.lblDB3.Name = "lblDB3";
-            this.lblDB3.Size = new System.Drawing.Size(156, 25);
+            this.lblDB3.Size = new System.Drawing.Size(134, 20);
             this.lblDB3.TabIndex = 16;
             this.lblDB3.Text = "Total Bookings";
             this.lblDB3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -124,10 +121,9 @@
             // 
             this.panel2.Controls.Add(this.lblDB4);
             this.panel2.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.panel2.Location = new System.Drawing.Point(660, 575);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(550, 479);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(222, 240);
+            this.panel2.Size = new System.Drawing.Size(185, 200);
             this.panel2.TabIndex = 18;
             this.panel2.UseWaitCursor = true;
             // 
@@ -137,10 +133,9 @@
             this.lblDB4.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.lblDB4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDB4.ForeColor = System.Drawing.Color.Honeydew;
-            this.lblDB4.Location = new System.Drawing.Point(13, 29);
-            this.lblDB4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDB4.Location = new System.Drawing.Point(11, 24);
             this.lblDB4.Name = "lblDB4";
-            this.lblDB4.Size = new System.Drawing.Size(168, 25);
+            this.lblDB4.Size = new System.Drawing.Size(142, 20);
             this.lblDB4.TabIndex = 16;
             this.lblDB4.Text = "Today Bookings";
             this.lblDB4.UseWaitCursor = true;
@@ -149,10 +144,9 @@
             // 
             this.panel3.Controls.Add(this.lblDB6);
             this.panel3.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.panel3.Location = new System.Drawing.Point(1201, 575);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(1001, 479);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(239, 240);
+            this.panel3.Size = new System.Drawing.Size(199, 200);
             this.panel3.TabIndex = 20;
             this.panel3.UseWaitCursor = true;
             // 
@@ -162,10 +156,9 @@
             this.lblDB6.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.lblDB6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDB6.ForeColor = System.Drawing.Color.Honeydew;
-            this.lblDB6.Location = new System.Drawing.Point(22, 29);
-            this.lblDB6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDB6.Location = new System.Drawing.Point(18, 24);
             this.lblDB6.Name = "lblDB6";
-            this.lblDB6.Size = new System.Drawing.Size(149, 25);
+            this.lblDB6.Size = new System.Drawing.Size(125, 20);
             this.lblDB6.TabIndex = 16;
             this.lblDB6.Text = "Today Income";
             this.lblDB6.UseWaitCursor = true;
@@ -174,10 +167,9 @@
             // 
             this.panel4.Controls.Add(this.lblDB5);
             this.panel4.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.panel4.Location = new System.Drawing.Point(931, 575);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Location = new System.Drawing.Point(776, 479);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(222, 240);
+            this.panel4.Size = new System.Drawing.Size(185, 200);
             this.panel4.TabIndex = 19;
             this.panel4.UseWaitCursor = true;
             // 
@@ -187,10 +179,9 @@
             this.lblDB5.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.lblDB5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDB5.ForeColor = System.Drawing.Color.Honeydew;
-            this.lblDB5.Location = new System.Drawing.Point(30, 29);
-            this.lblDB5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDB5.Location = new System.Drawing.Point(25, 24);
             this.lblDB5.Name = "lblDB5";
-            this.lblDB5.Size = new System.Drawing.Size(137, 25);
+            this.lblDB5.Size = new System.Drawing.Size(117, 20);
             this.lblDB5.TabIndex = 16;
             this.lblDB5.Text = "Total Income";
             this.lblDB5.UseWaitCursor = true;
@@ -200,21 +191,20 @@
             this.plhome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.plhome.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.plhome.ForeColor = System.Drawing.Color.Black;
-            this.plhome.Location = new System.Drawing.Point(355, -2);
-            this.plhome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.plhome.Location = new System.Drawing.Point(296, -2);
             this.plhome.Name = "plhome";
-            this.plhome.Size = new System.Drawing.Size(1423, 971);
+            this.plhome.Size = new System.Drawing.Size(1186, 809);
             this.plhome.TabIndex = 22;
             this.plhome.UseWaitCursor = true;
+            this.plhome.Paint += new System.Windows.Forms.PaintEventHandler(this.plhome_Paint);
             // 
             // PB4
             // 
             this.PB4.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.PB4.Image = global::MovieTheatreManagementSystem.Properties.Resources.Spider_Man1;
-            this.PB4.Location = new System.Drawing.Point(1201, 149);
-            this.PB4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PB4.Location = new System.Drawing.Point(1001, 124);
             this.PB4.Name = "PB4";
-            this.PB4.Size = new System.Drawing.Size(239, 413);
+            this.PB4.Size = new System.Drawing.Size(199, 344);
             this.PB4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PB4.TabIndex = 14;
             this.PB4.TabStop = false;
@@ -224,10 +214,9 @@
             // 
             this.PB3.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.PB3.Image = global::MovieTheatreManagementSystem.Properties.Resources.Avengers1;
-            this.PB3.Location = new System.Drawing.Point(929, 149);
-            this.PB3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PB3.Location = new System.Drawing.Point(774, 124);
             this.PB3.Name = "PB3";
-            this.PB3.Size = new System.Drawing.Size(226, 413);
+            this.PB3.Size = new System.Drawing.Size(188, 344);
             this.PB3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PB3.TabIndex = 13;
             this.PB3.TabStop = false;
@@ -237,10 +226,9 @@
             // 
             this.PB2.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.PB2.Image = ((System.Drawing.Image)(resources.GetObject("PB2.Image")));
-            this.PB2.Location = new System.Drawing.Point(662, 149);
-            this.PB2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PB2.Location = new System.Drawing.Point(552, 124);
             this.PB2.Name = "PB2";
-            this.PB2.Size = new System.Drawing.Size(226, 413);
+            this.PB2.Size = new System.Drawing.Size(188, 344);
             this.PB2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PB2.TabIndex = 12;
             this.PB2.TabStop = false;
@@ -250,10 +238,9 @@
             // 
             this.PB1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.PB1.Image = global::MovieTheatreManagementSystem.Properties.Resources.Batman1;
-            this.PB1.Location = new System.Drawing.Point(395, 149);
-            this.PB1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PB1.Location = new System.Drawing.Point(329, 124);
             this.PB1.Name = "PB1";
-            this.PB1.Size = new System.Drawing.Size(226, 413);
+            this.PB1.Size = new System.Drawing.Size(188, 344);
             this.PB1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PB1.TabIndex = 11;
             this.PB1.TabStop = false;
@@ -263,10 +250,9 @@
             // 
             this.pbLOGO.BackgroundImage = global::MovieTheatreManagementSystem.Properties.Resources.LOGO60;
             this.pbLOGO.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.pbLOGO.Location = new System.Drawing.Point(70, 12);
-            this.pbLOGO.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbLOGO.Location = new System.Drawing.Point(58, 10);
             this.pbLOGO.Name = "pbLOGO";
-            this.pbLOGO.Size = new System.Drawing.Size(72, 84);
+            this.pbLOGO.Size = new System.Drawing.Size(60, 70);
             this.pbLOGO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLOGO.TabIndex = 10;
             this.pbLOGO.TabStop = false;
@@ -281,10 +267,9 @@
             this.btnLOG.ForeColor = System.Drawing.Color.White;
             this.btnLOG.Image = global::MovieTheatreManagementSystem.Properties.Resources.Logout64;
             this.btnLOG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLOG.Location = new System.Drawing.Point(1, 886);
-            this.btnLOG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLOG.Location = new System.Drawing.Point(1, 738);
             this.btnLOG.Name = "btnLOG";
-            this.btnLOG.Size = new System.Drawing.Size(277, 108);
+            this.btnLOG.Size = new System.Drawing.Size(231, 90);
             this.btnLOG.TabIndex = 9;
             this.btnLOG.Text = "Logout";
             this.btnLOG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -301,10 +286,9 @@
             this.btnPAY.ForeColor = System.Drawing.Color.White;
             this.btnPAY.Image = global::MovieTheatreManagementSystem.Properties.Resources.Payment64;
             this.btnPAY.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPAY.Location = new System.Drawing.Point(1, 773);
-            this.btnPAY.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPAY.Location = new System.Drawing.Point(1, 644);
             this.btnPAY.Name = "btnPAY";
-            this.btnPAY.Size = new System.Drawing.Size(277, 108);
+            this.btnPAY.Size = new System.Drawing.Size(231, 90);
             this.btnPAY.TabIndex = 8;
             this.btnPAY.Text = "Payment";
             this.btnPAY.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -321,10 +305,9 @@
             this.btnTIk.ForeColor = System.Drawing.Color.White;
             this.btnTIk.Image = global::MovieTheatreManagementSystem.Properties.Resources.Ticket64;
             this.btnTIk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTIk.Location = new System.Drawing.Point(1, 661);
-            this.btnTIk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTIk.Location = new System.Drawing.Point(1, 551);
             this.btnTIk.Name = "btnTIk";
-            this.btnTIk.Size = new System.Drawing.Size(277, 108);
+            this.btnTIk.Size = new System.Drawing.Size(231, 90);
             this.btnTIk.TabIndex = 7;
             this.btnTIk.Text = "Ticket";
             this.btnTIk.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -341,10 +324,9 @@
             this.btnBK.ForeColor = System.Drawing.Color.White;
             this.btnBK.Image = global::MovieTheatreManagementSystem.Properties.Resources.Booking64;
             this.btnBK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBK.Location = new System.Drawing.Point(1, 550);
-            this.btnBK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBK.Location = new System.Drawing.Point(1, 458);
             this.btnBK.Name = "btnBK";
-            this.btnBK.Size = new System.Drawing.Size(277, 108);
+            this.btnBK.Size = new System.Drawing.Size(231, 90);
             this.btnBK.TabIndex = 6;
             this.btnBK.Text = "Booking";
             this.btnBK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -361,10 +343,9 @@
             this.btnSH.ForeColor = System.Drawing.Color.White;
             this.btnSH.Image = global::MovieTheatreManagementSystem.Properties.Resources.Shows64;
             this.btnSH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSH.Location = new System.Drawing.Point(1, 439);
-            this.btnSH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSH.Location = new System.Drawing.Point(1, 366);
             this.btnSH.Name = "btnSH";
-            this.btnSH.Size = new System.Drawing.Size(277, 108);
+            this.btnSH.Size = new System.Drawing.Size(231, 90);
             this.btnSH.TabIndex = 5;
             this.btnSH.Text = "Shows";
             this.btnSH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -381,10 +362,9 @@
             this.btnHL.ForeColor = System.Drawing.Color.White;
             this.btnHL.Image = global::MovieTheatreManagementSystem.Properties.Resources.Hall64;
             this.btnHL.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHL.Location = new System.Drawing.Point(1, 325);
-            this.btnHL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHL.Location = new System.Drawing.Point(1, 271);
             this.btnHL.Name = "btnHL";
-            this.btnHL.Size = new System.Drawing.Size(277, 108);
+            this.btnHL.Size = new System.Drawing.Size(231, 90);
             this.btnHL.TabIndex = 4;
             this.btnHL.Text = "Hall";
             this.btnHL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -401,10 +381,9 @@
             this.btnTRE.ForeColor = System.Drawing.Color.White;
             this.btnTRE.Image = global::MovieTheatreManagementSystem.Properties.Resources.Theatre64;
             this.btnTRE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTRE.Location = new System.Drawing.Point(1, 211);
-            this.btnTRE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTRE.Location = new System.Drawing.Point(1, 176);
             this.btnTRE.Name = "btnTRE";
-            this.btnTRE.Size = new System.Drawing.Size(277, 108);
+            this.btnTRE.Size = new System.Drawing.Size(231, 90);
             this.btnTRE.TabIndex = 3;
             this.btnTRE.Text = "Theatre";
             this.btnTRE.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -421,10 +400,9 @@
             this.btnDB.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDB.Image = global::MovieTheatreManagementSystem.Properties.Resources.dashboard64;
             this.btnDB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDB.Location = new System.Drawing.Point(1, 100);
-            this.btnDB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDB.Location = new System.Drawing.Point(1, 83);
             this.btnDB.Name = "btnDB";
-            this.btnDB.Size = new System.Drawing.Size(277, 108);
+            this.btnDB.Size = new System.Drawing.Size(231, 90);
             this.btnDB.TabIndex = 0;
             this.btnDB.Text = "Dashboard";
             this.btnDB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -436,10 +414,9 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.panel6.Location = new System.Drawing.Point(1, 977);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Location = new System.Drawing.Point(1, 814);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1819, 48);
+            this.panel6.Size = new System.Drawing.Size(1516, 40);
             this.panel6.TabIndex = 24;
             this.panel6.UseWaitCursor = true;
             // 
@@ -447,22 +424,35 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.panel5.Location = new System.Drawing.Point(1786, -2);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Location = new System.Drawing.Point(1488, -2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(68, 1027);
+            this.panel5.Size = new System.Drawing.Size(57, 856);
             this.panel5.TabIndex = 25;
             this.panel5.UseWaitCursor = true;
             // 
+            // btnUserinfo
+            // 
+            this.btnUserinfo.BackColor = System.Drawing.Color.Green;
+            this.btnUserinfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserinfo.ForeColor = System.Drawing.Color.Blue;
+            this.btnUserinfo.Location = new System.Drawing.Point(1001, 39);
+            this.btnUserinfo.Name = "btnUserinfo";
+            this.btnUserinfo.Size = new System.Drawing.Size(199, 41);
+            this.btnUserinfo.TabIndex = 26;
+            this.btnUserinfo.Text = "User Info";
+            this.btnUserinfo.UseVisualStyleBackColor = false;
+            this.btnUserinfo.Click += new System.EventHandler(this.btnUserinfo_Click);
+            // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1819, 1013);
+            this.ClientSize = new System.Drawing.Size(1516, 844);
             this.Controls.Add(this.plhome);
+            this.Controls.Add(this.btnUserinfo);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
@@ -487,7 +477,6 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Aquamarine;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Movie Ticket Booking System";
@@ -539,6 +528,7 @@
         private System.Windows.Forms.Panel plhome;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btnUserinfo;
     }
 }
 

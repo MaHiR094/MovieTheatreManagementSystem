@@ -91,5 +91,16 @@ namespace MovieTheatreManagementSystem
             plhome.Visible = true;
             LoadForm(new Ticket());
         }
+
+        private void plhome_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnUserinfo_Click(object sender, EventArgs e)
+        {
+            AddUserForm form = new AddUserForm();
+            form.Show();
+        }
     }
 }
