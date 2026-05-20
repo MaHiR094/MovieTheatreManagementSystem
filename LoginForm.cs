@@ -74,12 +74,16 @@ namespace MovieTheatreManagementSystem
 
         private void btnnewuser_Click(object sender, EventArgs e)
         {
+            if (SessionManager.UserTypeId != 0 && SessionManager.UserTypeId != 1)
+            {
+                MessageBox.Show("Only Admins can create new users.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             UserManagementForm form = new UserManagementForm();
-
             this.Hide();
-
             form.ShowDialog();
-
             this.Show();
         }
     }
