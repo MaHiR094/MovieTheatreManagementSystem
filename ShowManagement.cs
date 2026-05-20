@@ -14,21 +14,67 @@ namespace MovieTheatreManagementSystem
         {
             InitializeComponent();
         }
-
         private void ShowManagement_Load_1(object sender, EventArgs e)
         {
-            LoadHalls();
+            LoadTheatres();
             LoadShows();
         }
-
-        private void LoadHalls()
+        private void LoadTheatres()
         {
-            cmbHallNo.Items.Clear();
+            cmbtheatre.SelectedIndexChanged  -= cmbtheatre_SelectedIndexChanged;
 
-            cmbHallNo.Items.Add("Hall A");
-            cmbHallNo.Items.Add("Hall B");
+            string query = "SELECT TheatreId, TheatreName FROM Theatre";
+
+            ResultSet result = db.GetQueryData(query);
+
+            if (!result.HasError && result.Data != null)
+            {
+                cmbtheatre.DataSource = result.Data;
+                cmbtheatre.DisplayMember = "TheatreName";
+                cmbtheatre.ValueMember = "TheatreId";
+                cmbtheatre.SelectedIndex = -1;
+            }
+            else
+            {
+                MessageBox.Show("Error loading theatres: " + result.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            cmbtheatre.SelectedIndexChanged += cmbtheatre_SelectedIndexChanged;
         }
 
+        private void cmbtheatre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbHallNo.DataSource = null;
+            cmbHallNo.Items.Clear();
+            txtShowPrice.Clear();
+
+            if (cmbtheatre.SelectedIndex < 0 || cmbtheatre.SelectedValue == null)
+                return;
+            int theatreId;
+            if (!int.TryParse(cmbtheatre.SelectedValue.ToString(), out theatreId))
+                return;
+
+            string query = "SELECT HallId, HallName FROM Hall WHERE TheatreId = " + theatreId;
+
+            ResultSet result = db.GetQueryData(query);
+
+            if (!result.HasError && result.Data != null)
+            {
+                cmbHallNo.SelectedIndexChanged -= cmbHallNo_SelectedIndexChanged;
+
+                cmbHallNo.DataSource = result.Data;
+                cmbHallNo.DisplayMember = "HallName";
+                cmbHallNo.ValueMember = "HallId";
+                cmbHallNo.SelectedIndex = -1;
+
+                cmbHallNo.SelectedIndexChanged += cmbHallNo_SelectedIndexChanged;
+            }
+            else
+            {
+                MessageBox.Show("Error loading halls: " + result.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void cmbHallNo_SelectedIndexChanged(object sender, EventArgs e)
         {
             SetPrice();
@@ -36,26 +82,28 @@ namespace MovieTheatreManagementSystem
 
         private void SetPrice()
         {
-            if (cmbHallNo.SelectedItem == null)
-                return;
+            if (cmbHallNo.SelectedItem == null) return;
 
-            if (cmbHallNo.Text == "Hall A")
+            DataRowView row = cmbHallNo.SelectedItem as DataRowView;
+            if (row == null) return;
+
+            string hallName = row["HallName"].ToString();
+
+            if (hallName == "Hall A")
                 txtShowPrice.Text = "650";
-
-            else if (cmbHallNo.Text == "Hall B")
+            else if (hallName == "Hall B")
                 txtShowPrice.Text = "1000";
-
             else
                 txtShowPrice.Text = "";
         }
-
         private void LoadShows()
         {
             string query =
-                "SELECT s.ShowId, s.MovieName, h.HallName, " +
+                "SELECT s.ShowId, s.MovieName, t.TheatreName, h.HallName, " +
                 "s.ShowDate, s.ShowTime, s.ShowPrice " +
                 "FROM Shows s " +
                 "INNER JOIN Hall h ON s.HallId = h.HallId " +
+                "INNER JOIN Theatre t ON h.TheatreId = t.TheatreId " +
                 "ORDER BY s.ShowDate DESC, s.ShowTime";
 
             ResultSet result = db.GetQueryData(query);
@@ -69,53 +117,59 @@ namespace MovieTheatreManagementSystem
             }
             else
             {
-                MessageBox.Show(
-                    result.Message,
-                    "Database Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show(result.Message,
+                    "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtMovie.Text) ||
-                cmbHallNo.SelectedItem == null ||
-                cmbTime.SelectedItem == null)
+            if (cmbtheatre.SelectedIndex < 0)
             {
-                MessageBox.Show(
-                    "Please fill all fields.",
-                    "Validation",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
+                MessageBox.Show("Please select a Theatre.",
+                    "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            int hallId = (cmbHallNo.Text == "Hall A") ? 1 : 2;
+            if (string.IsNullOrWhiteSpace(txtMovie.Text))
+            {
+                MessageBox.Show("Please enter a Movie name.",
+                    "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (cmbHallNo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select a Hall.",
+                    "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (cmbTime.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a Time.",
+                    "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int hallId = Convert.ToInt32(cmbHallNo.SelectedValue);
 
             string checkQuery =
                 "SELECT * FROM Shows WHERE " +
-                "HallId=" + hallId + " AND " +
-                "ShowDate='" + dtpShowDate.Value.ToString("yyyy-MM-dd") + "' AND " +
-                "ShowTime='" + cmbTime.Text + "'";
+                "HallId = " + hallId + " AND " +
+                "ShowDate = '" + dtpShowDate.Value.ToString("yyyy-MM-dd") + "' AND " +
+                "ShowTime = '" + cmbTime.Text + "'";
 
             ResultSet checkResult = db.GetQueryData(checkQuery);
 
-            if (checkResult.Data.Rows.Count > 0)
+            if (checkResult.Data != null && checkResult.Data.Rows.Count > 0)
             {
-                MessageBox.Show(
-                    "A show already exists in this hall at this time.",
-                    "Schedule Conflict",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
+                MessageBox.Show("A show already exists in this hall at this time.",
+                    "Schedule Conflict", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             string query =
-                "INSERT INTO Shows " +
-                "(ShowDate, ShowTime, ShowPrice, HallId, MovieName) " +
+                "INSERT INTO Shows (ShowDate, ShowTime, ShowPrice, HallId, MovieName) " +
                 "VALUES (" +
                 "'" + dtpShowDate.Value.ToString("yyyy-MM-dd") + "', " +
                 "'" + cmbTime.Text + "', " +
@@ -127,269 +181,171 @@ namespace MovieTheatreManagementSystem
 
             if (result.HasError)
             {
-                MessageBox.Show(
-                    result.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
+                MessageBox.Show(result.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            MessageBox.Show(
-                "Show Added Successfully",
-                "Success",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            MessageBox.Show("Show Added Successfully",
+                "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             LoadShows();
             ClearFields();
         }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtShowId.Text))
+            if (string.IsNullOrWhiteSpace(txtShowId.Text) ||
+                txtShowId.Text == "Auto Generated")
             {
-                MessageBox.Show(
-                    "Select a show first.",
-                    "Validation",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
+                MessageBox.Show("Select a show from the grid first.",
+                    "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(txtMovie.Text) ||
-                cmbHallNo.SelectedItem == null ||
+                cmbHallNo.SelectedIndex < 0 ||
                 cmbTime.SelectedItem == null)
             {
-                MessageBox.Show(
-                    "Please fill all fields.",
-                    "Validation",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
+                MessageBox.Show("Please fill all fields.",
+                    "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            int hallId = (cmbHallNo.Text == "Hall A") ? 1 : 2;
-
+            int hallId = Convert.ToInt32(cmbHallNo.SelectedValue);
             int showId = Convert.ToInt32(txtShowId.Text);
 
             string checkQuery =
                 "SELECT * FROM Shows WHERE " +
-                "HallId=" + hallId + " AND " +
-                "ShowDate='" + dtpShowDate.Value.ToString("yyyy-MM-dd") + "' AND " +
-                "ShowTime='" + cmbTime.Text + "' AND " +
-                "ShowId!=" + showId;
+                "HallId = " + hallId + " AND " +
+                "ShowDate = '" + dtpShowDate.Value.ToString("yyyy-MM-dd") + "' AND " +
+                "ShowTime = '" + cmbTime.Text + "' AND " +
+                "ShowId != " + showId;
 
             ResultSet checkResult = db.GetQueryData(checkQuery);
 
-            if (checkResult.Data.Rows.Count > 0)
+            if (checkResult.Data != null && checkResult.Data.Rows.Count > 0)
             {
-                MessageBox.Show(
-                    "Another show already exists at this time.",
-                    "Schedule Conflict",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
+                MessageBox.Show("Another show already exists at this time.",
+                    "Schedule Conflict", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // =========================
-            // UPDATE QUERY
-            // =========================
             string query =
                 "UPDATE Shows SET " +
-                "MovieName='" + txtMovie.Text + "', " +
-                "ShowDate='" + dtpShowDate.Value.ToString("yyyy-MM-dd") + "', " +
-                "ShowTime='" + cmbTime.Text + "', " +
-                "ShowPrice='" + txtShowPrice.Text + "', " +
-                "HallId=" + hallId + " " +
-                "WHERE ShowId=" + showId;
+                "MovieName = '" + txtMovie.Text + "', " +
+                "ShowDate = '" + dtpShowDate.Value.ToString("yyyy-MM-dd") + "', " +
+                "ShowTime = '" + cmbTime.Text + "', " +
+                "ShowPrice = '" + txtShowPrice.Text + "', " +
+                "HallId = " + hallId + " " +
+                "WHERE ShowId = " + showId;
 
             ResultSet result = db.ExecuteNonQuery(query);
 
             if (result.HasError)
             {
-                MessageBox.Show(
-                    result.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
+                MessageBox.Show(result.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            MessageBox.Show(
-                "Show Updated Successfully",
-                "Success",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            MessageBox.Show("Show Updated Successfully",
+                "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             LoadShows();
             ClearFields();
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvShowInfo.CurrentRow == null)
             {
-                MessageBox.Show(
-                    "Please select a show to delete.",
-                    "Validation",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
+                MessageBox.Show("Please select a show to delete.",
+                    "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string movieName =
-                dgvShowInfo.CurrentRow.Cells["MovieName"]
-                .Value?.ToString();
+            string movieName = dgvShowInfo.CurrentRow.Cells["MovieName"].Value?.ToString();
 
             DialogResult confirm = MessageBox.Show(
-                "Are you sure you want to delete the show for '" +
-                movieName + "' ?",
-                "Confirm Delete",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
+                "Delete show for '" + movieName + "'?\nAll related tickets will also be deleted.",
+                "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (confirm != DialogResult.Yes)
-                return;
+            if (confirm != DialogResult.Yes) return;
 
-            int showId =
-                Convert.ToInt32(
-                    dgvShowInfo.CurrentRow.Cells["ShowId"].Value);
+            int showId = Convert.ToInt32(dgvShowInfo.CurrentRow.Cells["ShowId"].Value);
 
-            string deleteTickets =
-                "DELETE FROM Ticket WHERE ShowId=" + showId;
+            string deletePayments =
+                "DELETE FROM Payment WHERE TicketId IN " +
+                "(SELECT TicketId FROM Ticket WHERE ShowId = " + showId + ")";
+            db.ExecuteNonQuery(deletePayments);
 
+            string deleteTickets = "DELETE FROM Ticket WHERE ShowId = " + showId;
             db.ExecuteNonQuery(deleteTickets);
 
-            string deleteShow =
-                "DELETE FROM Shows WHERE ShowId=" + showId;
+            string deleteBookings =
+                "DELETE FROM Booking WHERE BookingId NOT IN " +
+                "(SELECT DISTINCT BookingId FROM Ticket)";
+            db.ExecuteNonQuery(deleteBookings);
 
+            string deleteShow = "DELETE FROM Shows WHERE ShowId = " + showId;
             ResultSet result = db.ExecuteNonQuery(deleteShow);
 
             if (result.HasError)
             {
-                MessageBox.Show(
-                    result.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
+                MessageBox.Show(result.Message,"Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            MessageBox.Show(
-                "Show Deleted Successfully",
-                "Success",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            MessageBox.Show("Show Deleted Successfully","Success",MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             LoadShows();
             ClearFields();
         }
-
-        private void dgvShowInfo_CellClick(
-            object sender,
-            DataGridViewCellEventArgs e)
+        private void dgvShowInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0)
-                return;
+            if (e.RowIndex < 0) return;
 
-            DataGridViewRow row =
-                dgvShowInfo.Rows[e.RowIndex];
+            DataGridViewRow row = dgvShowInfo.Rows[e.RowIndex];
 
-            txtShowId.Text =
-                row.Cells["ShowId"].Value?.ToString();
+            txtShowId.Text = row.Cells["ShowId"].Value?.ToString();
+            txtMovie.Text = row.Cells["MovieName"].Value?.ToString();
+            dtpShowDate.Value = Convert.ToDateTime(row.Cells["ShowDate"].Value);
+            cmbTime.Text = row.Cells["ShowTime"].Value?.ToString();
+            txtShowPrice.Text = row.Cells["ShowPrice"].Value?.ToString();
 
-            txtMovie.Text =
-                row.Cells["MovieName"].Value?.ToString();
+            string theatreName = row.Cells["TheatreName"].Value?.ToString();
+            foreach (DataRowView item in cmbtheatre.Items)
+            {
+                if (item["TheatreName"].ToString() == theatreName)
+                {
+                    cmbtheatre.SelectedItem = item;
+                    break;
+                }
+            }
 
-            cmbHallNo.Text =
-                row.Cells["HallName"].Value?.ToString();
-
-            dtpShowDate.Value =
-                Convert.ToDateTime(
-                    row.Cells["ShowDate"].Value);
-
-            cmbTime.Text =
-                row.Cells["ShowTime"].Value?.ToString();
-
-            txtShowPrice.Text =
-                row.Cells["ShowPrice"].Value?.ToString();
+            string hallName = row.Cells["HallName"].Value?.ToString();
+            foreach (DataRowView item in cmbHallNo.Items)
+            {
+                if (item["HallName"].ToString() == hallName)
+                {
+                    cmbHallNo.SelectedItem = item;
+                    break;
+                }
+            }
         }
-
         private void ClearFields()
         {
             txtShowId.Text = "Auto Generated";
-
             txtMovie.Clear();
-
-            cmbHallNo.SelectedIndex = -1;
-
-            cmbTime.SelectedIndex = -1;
-
             txtShowPrice.Clear();
-
             dtpShowDate.Value = DateTime.Now;
+            cmbtheatre.SelectedIndex = -1;
+            cmbHallNo.DataSource = null;
+            cmbHallNo.Items.Clear();
+            cmbTime.SelectedIndex = -1;
         }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearFields();
-        }
-
-        private void txtShowPrice_TextChanged(
-            object sender,
-            EventArgs e)
-        {
-
-        }
-        private void dgvShowInfo_CellContentDoubleClick(
-            object sender,
-            DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-                return;
-
-            var row = dgvShowInfo.Rows[e.RowIndex];
-
-            txtShowId.Text =
-                row.Cells["ShowId"].Value.ToString();
-
-            txtMovie.Text =
-                row.Cells["MovieName"].Value.ToString();
-
-            cmbHallNo.Text =
-                row.Cells["HallName"].Value.ToString();
-
-            dtpShowDate.Value =
-                Convert.ToDateTime(
-                    row.Cells["ShowDate"].Value);
-
-            cmbTime.Text =
-                row.Cells["ShowTime"].Value.ToString();
-
-            txtShowPrice.Text =
-                row.Cells["ShowPrice"].Value.ToString();
-        }
-
-        private void dgvShowInfo_CellContentClick(
-            object sender,
-            DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void cmbTime_SelectedIndexChanged(
-            object sender,
-            EventArgs e)
-        {
-
         }
     }
 }

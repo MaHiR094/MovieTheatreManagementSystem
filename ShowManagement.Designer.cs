@@ -48,6 +48,8 @@
             this.lblSearch = new System.Windows.Forms.Label();
             this.dgvShowInfo = new System.Windows.Forms.DataGridView();
             this.txtMovie = new System.Windows.Forms.TextBox();
+            this.lbltheatre = new System.Windows.Forms.Label();
+            this.cmbtheatre = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +57,7 @@
             // 
             this.lblShowManagement.AutoSize = true;
             this.lblShowManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowManagement.Location = new System.Drawing.Point(63, 46);
+            this.lblShowManagement.Location = new System.Drawing.Point(12, 9);
             this.lblShowManagement.Name = "lblShowManagement";
             this.lblShowManagement.Size = new System.Drawing.Size(246, 29);
             this.lblShowManagement.TabIndex = 28;
@@ -65,7 +67,7 @@
             // 
             this.lblShowId.AutoSize = true;
             this.lblShowId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShowId.Location = new System.Drawing.Point(60, 117);
+            this.lblShowId.Location = new System.Drawing.Point(60, 62);
             this.lblShowId.Name = "lblShowId";
             this.lblShowId.Size = new System.Drawing.Size(93, 24);
             this.lblShowId.TabIndex = 29;
@@ -123,12 +125,12 @@
             // 
             // txtShowId
             // 
-            this.txtShowId.Location = new System.Drawing.Point(163, 118);
+            this.txtShowId.Location = new System.Drawing.Point(163, 64);
             this.txtShowId.Name = "txtShowId";
             this.txtShowId.ReadOnly = true;
             this.txtShowId.Size = new System.Drawing.Size(113, 22);
             this.txtShowId.TabIndex = 36;
-            this.txtShowId.Text = "Auto Generated";
+            this.txtShowId.Text = "Auto Generated ";
             // 
             // txtShowPrice
             // 
@@ -136,7 +138,6 @@
             this.txtShowPrice.Name = "txtShowPrice";
             this.txtShowPrice.Size = new System.Drawing.Size(255, 22);
             this.txtShowPrice.TabIndex = 37;
-            this.txtShowPrice.TextChanged += new System.EventHandler(this.txtShowPrice_TextChanged);
             // 
             // cmbHallNo
             // 
@@ -161,7 +162,6 @@
             this.cmbTime.Name = "cmbTime";
             this.cmbTime.Size = new System.Drawing.Size(271, 24);
             this.cmbTime.TabIndex = 40;
-            this.cmbTime.SelectedIndexChanged += new System.EventHandler(this.cmbTime_SelectedIndexChanged);
             // 
             // dtpShowDate
             // 
@@ -253,8 +253,6 @@
             this.dgvShowInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvShowInfo.Size = new System.Drawing.Size(853, 315);
             this.dgvShowInfo.TabIndex = 49;
-            this.dgvShowInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowInfo_CellContentClick);
-            this.dgvShowInfo.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowInfo_CellContentDoubleClick);
             // 
             // txtMovie
             // 
@@ -263,11 +261,35 @@
             this.txtMovie.Size = new System.Drawing.Size(255, 22);
             this.txtMovie.TabIndex = 50;
             // 
+            // lbltheatre
+            // 
+            this.lbltheatre.AutoSize = true;
+            this.lbltheatre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltheatre.Location = new System.Drawing.Point(60, 112);
+            this.lbltheatre.Name = "lbltheatre";
+            this.lbltheatre.Size = new System.Drawing.Size(82, 24);
+            this.lbltheatre.TabIndex = 51;
+            this.lbltheatre.Text = "Theatre";
+            // 
+            // cmbtheatre
+            // 
+            this.cmbtheatre.FormattingEnabled = true;
+            this.cmbtheatre.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.cmbtheatre.Location = new System.Drawing.Point(163, 114);
+            this.cmbtheatre.Name = "cmbtheatre";
+            this.cmbtheatre.Size = new System.Drawing.Size(255, 24);
+            this.cmbtheatre.TabIndex = 52;
+            this.cmbtheatre.SelectedIndexChanged += new System.EventHandler(this.cmbtheatre_SelectedIndexChanged);
+            // 
             // ShowManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(917, 745);
+            this.Controls.Add(this.cmbtheatre);
+            this.Controls.Add(this.lbltheatre);
             this.Controls.Add(this.txtMovie);
             this.Controls.Add(this.dgvShowInfo);
             this.Controls.Add(this.lblSearch);
@@ -319,5 +341,7 @@
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.DataGridView dgvShowInfo;
         private System.Windows.Forms.TextBox txtMovie;
+        private System.Windows.Forms.Label lbltheatre;
+        private System.Windows.Forms.ComboBox cmbtheatre;
     }
 }

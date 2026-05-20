@@ -8,9 +8,7 @@ namespace MovieTheatreManagementSystem
 {
     public partial class Seat : Form
     {
-        // =====================================================
-        // FIELDS
-        // =====================================================
+        
 
         private DBAccessHelper db = new DBAccessHelper();
         private List<string> selectedSeats = new List<string>();
@@ -19,15 +17,16 @@ namespace MovieTheatreManagementSystem
         private int currentBookingGroupId = 1;
         private int lastConfirmedBookingId = 0;
 
-        // =====================================================
-        // CONSTRUCTORS
-        // =====================================================
 
         public Seat()
         {
             InitializeComponent();
             this.btnCB.Click += new EventHandler(this.btnCB_Click);
             this.btnCAN.Click += new EventHandler(this.btnCAN_Click);
+
+            // Move event hookup here
+            cmbMovie.SelectedIndexChanged += cmbMovie_SelectedIndexChanged;
+            cmbShow.SelectedIndexChanged += cmbShow_SelectedIndexChanged;
         }
 
         public Seat(int userId)
@@ -36,11 +35,12 @@ namespace MovieTheatreManagementSystem
             currentUserId = userId;
             this.btnCB.Click += new EventHandler(this.btnCB_Click);
             this.btnCAN.Click += new EventHandler(this.btnCAN_Click);
+
+            // Move event hookup here
+            cmbMovie.SelectedIndexChanged += cmbMovie_SelectedIndexChanged;
+            cmbShow.SelectedIndexChanged += cmbShow_SelectedIndexChanged;
         }
 
-        // =====================================================
-        // FORM LOAD
-        // =====================================================
 
         private void Seat_Load(object sender, EventArgs e)
         {
@@ -49,9 +49,6 @@ namespace MovieTheatreManagementSystem
             AttachSeatClickEvents();
         }
 
-        // =====================================================
-        // ATTACH CLICK EVENTS TO ALL SEAT BUTTONS
-        // =====================================================
 
         private void AttachSeatClickEvents()
         {
@@ -59,14 +56,11 @@ namespace MovieTheatreManagementSystem
             {
                 if (ctrl is Button btn && btn.Name.StartsWith("btan"))
                 {
-                    btn.Click += new EventHandler(SeatButton_Click);
+                    btn.Click -= SeatButton_Click;
+                    btn.Click += SeatButton_Click;
                 }
             }
         }
-
-        // =====================================================
-        // LOAD MOVIES INTO COMBO BOX
-        // =====================================================
 
         private void LoadMovies()
         {
@@ -85,14 +79,7 @@ namespace MovieTheatreManagementSystem
                     cmbMovie.Items.Add(row["MovieName"].ToString());
                 }
             }
-
-            cmbMovie.SelectedIndexChanged += new EventHandler(cmbMovie_SelectedIndexChanged);
-            cmbShow.SelectedIndexChanged += new EventHandler(cmbShow_SelectedIndexChanged);
         }
-
-        // =====================================================
-        // MOVIE SELECTION CHANGED
-        // =====================================================
 
         private void cmbMovie_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -131,9 +118,6 @@ namespace MovieTheatreManagementSystem
             }
         }
 
-        // =====================================================
-        // SHOW SELECTION CHANGED
-        // =====================================================
 
         private void cmbShow_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -166,9 +150,7 @@ namespace MovieTheatreManagementSystem
             LoadSeatAvailability(selected.ShowId);
         }
 
-        // =====================================================
-        // LOAD SEAT AVAILABILITY
-        // =====================================================
+       
 
         private void LoadSeatAvailability(int showId)
         {
@@ -210,9 +192,7 @@ namespace MovieTheatreManagementSystem
             }
         }
 
-        // =====================================================
-        // SEAT BUTTON CLICK HANDLER
-        // =====================================================
+      
 
         private void SeatButton_Click(object sender, EventArgs e)
         {
@@ -240,43 +220,31 @@ namespace MovieTheatreManagementSystem
             UpdateSelectedSeatsDisplay();
         }
 
-        // =====================================================
-        // EXISTING DESIGNER HANDLERS (keep compatibility)
-        // =====================================================
-
-        private void btanA1_Click(object sender, EventArgs e) { }
-        private void btanA2_Click(object sender, EventArgs e) { }
-
-        // =====================================================
-        // UPDATE SELECTED SEATS LABEL AND TOTAL
-        // =====================================================
+  
 
         private void UpdateSelectedSeatsDisplay()
         {
             if (selectedSeats.Count == 0)
             {
                 lblsele.Text = "";
-                lbltotalprice.Text = "Total Amount";
+                lblta.Text = "";
             }
             else
             {
                 lblsele.Text = string.Join(", ", selectedSeats);
                 decimal total = ticketPrice * selectedSeats.Count;
-                lbltotalprice.Text = "Total Amount: BDT " + total.ToString("F2");
+                lblta.Text = total.ToString("F2");
             }
         }
 
-        // =====================================================
-        // CONFIRM BOOKING
-        // ONE Booking row → MANY Ticket rows (one per seat)
-        // =====================================================
+
 
         private void btnCB_Click(object sender, EventArgs e)
         {
             if (selectedSeats.Count == 0)
             {
-                MessageBox.Show("Please select at least one seat.",
-                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show("Please select at least one seat.",
+                //    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -297,9 +265,6 @@ namespace MovieTheatreManagementSystem
 
             if (confirm != DialogResult.Yes) return;
 
-            // -------------------------------------------------
-            // 1. Insert ONE Booking row for the whole session
-            // -------------------------------------------------
 
             string bookingQuery = "INSERT INTO Booking (BookingStatus, UserId) "
                                 + "VALUES ('Booked', '" + currentUserId + "')";
@@ -313,9 +278,7 @@ namespace MovieTheatreManagementSystem
                 return;
             }
 
-            // -------------------------------------------------
-            // 2. Retrieve the new BookingId
-            // -------------------------------------------------
+
 
             string idQuery = "SELECT MAX(BookingId) AS LastId FROM Booking";
 
@@ -331,10 +294,7 @@ namespace MovieTheatreManagementSystem
             int bookingId = Convert.ToInt32(idResult.Data.Rows[0]["LastId"]);
             lastConfirmedBookingId = bookingId;
 
-            // -------------------------------------------------
-            // 3. Insert ONE Ticket per seat, all under the
-            //    same BookingId
-            // -------------------------------------------------
+
 
             bool allSuccess = true;
 
@@ -354,26 +314,39 @@ namespace MovieTheatreManagementSystem
                 }
             }
 
+            string getQuery =
+    "SELECT Ticket.TicketId " +
+    "FROM Ticket " +
+    "WHERE Ticket.bookingId = " + bookingId;
+
+            ResultSet res = db.GetQueryData(getQuery);
+
+            int[] ticketIDs = new int[res.Data.Rows.Count];
+
+            for (int i = 0; i < res.Data.Rows.Count; i++)
+            {
+                ticketIDs[i] = Convert.ToInt32(res.Data.Rows[i]["TicketId"]);
+            }
+
             if (allSuccess)
             {
                 MessageBox.Show(
                     "Booking confirmed!\n" +
                     "Booking ID : " + bookingId + "\n" +
+                    "Ticket IDs : " + string.Join(", ", ticketIDs) + "\n" +
                     "Session    : #" + currentBookingGroupId + "\n" +
                     "Seats      : " + string.Join(", ", selectedSeats) + "\n" +
                     "Total      : BDT " + (ticketPrice * selectedSeats.Count).ToString("F2"),
                     "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                int currentShowId = selectedShow.ShowId;
+
+                LoadSeatAvailability(currentShowId);
+
                 selectedSeats.Clear();
                 UpdateSelectedSeatsDisplay();
-                LoadSeatAvailability(selectedShow.ShowId);
             }
         }
-
-        // =====================================================
-        // CANCEL — ends session, bumps booking group ID
-        // Closes form only if nothing was done at all
-        // =====================================================
 
         private void btnCAN_Click(object sender, EventArgs e)
         {
@@ -399,13 +372,9 @@ namespace MovieTheatreManagementSystem
             UpdateSelectedSeatsDisplay();
 
             MessageBox.Show(
-                "Session ended. New Booking Session: #" + currentBookingGroupId,
+                "Session ended. New Booking Session.",
                 "New Session", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-        // =====================================================
-        // RESET — clears current seat selection only
-        // =====================================================
 
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -422,18 +391,11 @@ namespace MovieTheatreManagementSystem
             UpdateSelectedSeatsDisplay();
         }
 
-        // =====================================================
-        // HELPER: BUTTON NAME → SEAT ID
-        // =====================================================
-
         private string GetSeatIdFromButtonName(string buttonName)
         {
             return buttonName.Replace("btan", "").ToUpper();
         }
 
-        // =====================================================
-        // HELPER: DISABLE ALL SEATS
-        // =====================================================
 
         private void DisableAllSeats()
         {
@@ -446,11 +408,9 @@ namespace MovieTheatreManagementSystem
                 }
             }
         }
-    }
 
-    // =====================================================
-    // HELPER CLASS FOR SHOW COMBO BOX ITEMS
-    // =====================================================
+        
+    }
 
     public class ShowItem
     {

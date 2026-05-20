@@ -136,6 +136,9 @@
   <data name="Hall64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hall64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Booking64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Booking64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Logout64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logout64.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,28 +151,28 @@
   <data name="Batman1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Batman1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Payment64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Payment64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Avengers1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Avengers1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="360_F_657407241_v8RaCiTg1hlpt0Rt2hKBOV32IG6s3T2e1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\360_F_657407241_v8RaCiTg1hlpt0Rt2hKBOV32IG6s3T2e.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Shows64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shows64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Theatre64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Theatre64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Payment64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Payment64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dashboard64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboard64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Booking64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Booking64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Theatre64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Theatre64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Spider-Man1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Spider-Man1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="360_F_657407241_v8RaCiTg1hlpt0Rt2hKBOV32IG6s3T2e1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\360_F_657407241_v8RaCiTg1hlpt0Rt2hKBOV32IG6s3T2e.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="photo-1691480213129-106b2c7d1ee8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\photo-1691480213129-106b2c7d1ee8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

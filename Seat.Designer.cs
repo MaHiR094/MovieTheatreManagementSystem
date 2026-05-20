@@ -114,6 +114,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
+            this.lblta = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -186,7 +187,7 @@
             // 
             this.lblselected.AutoSize = true;
             this.lblselected.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblselected.Location = new System.Drawing.Point(37, 322);
+            this.lblselected.Location = new System.Drawing.Point(42, 322);
             this.lblselected.Name = "lblselected";
             this.lblselected.Size = new System.Drawing.Size(167, 29);
             this.lblselected.TabIndex = 7;
@@ -196,7 +197,7 @@
             // 
             this.lbltotalprice.AutoSize = true;
             this.lbltotalprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotalprice.Location = new System.Drawing.Point(37, 437);
+            this.lbltotalprice.Location = new System.Drawing.Point(45, 411);
             this.lbltotalprice.Name = "lbltotalprice";
             this.lbltotalprice.Size = new System.Drawing.Size(164, 29);
             this.lbltotalprice.TabIndex = 8;
@@ -877,7 +878,6 @@
             this.btanA2.TabIndex = 9;
             this.btanA2.Text = "2";
             this.btanA2.UseVisualStyleBackColor = false;
-            this.btanA2.Click += new System.EventHandler(this.btanA2_Click);
             // 
             // btanA1
             // 
@@ -889,7 +889,6 @@
             this.btanA1.TabIndex = 8;
             this.btanA1.Text = "1";
             this.btanA1.UseVisualStyleBackColor = false;
-            this.btanA1.Click += new System.EventHandler(this.btanA1_Click);
             // 
             // lblG
             // 
@@ -1036,6 +1035,7 @@
             this.btnCB.TabIndex = 16;
             this.btnCB.Text = "Confirm Booking";
             this.btnCB.UseVisualStyleBackColor = false;
+            this.btnCB.Click += new System.EventHandler(this.btnCB_Click);
             // 
             // btnCAN
             // 
@@ -1054,7 +1054,7 @@
             // 
             this.lblsele.AutoSize = true;
             this.lblsele.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsele.Location = new System.Drawing.Point(47, 370);
+            this.lblsele.Location = new System.Drawing.Point(44, 370);
             this.lblsele.Name = "lblsele";
             this.lblsele.Size = new System.Drawing.Size(0, 17);
             this.lblsele.TabIndex = 18;
@@ -1064,6 +1064,7 @@
             this.textBox1.Location = new System.Drawing.Point(139, 170);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(120, 22);
             this.textBox1.TabIndex = 19;
             // 
@@ -1072,6 +1073,7 @@
             this.textBox2.Location = new System.Drawing.Point(139, 224);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(120, 22);
             this.textBox2.TabIndex = 20;
             // 
@@ -1089,12 +1091,22 @@
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // lblta
+            // 
+            this.lblta.AutoSize = true;
+            this.lblta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblta.Location = new System.Drawing.Point(44, 465);
+            this.lblta.Name = "lblta";
+            this.lblta.Size = new System.Drawing.Size(0, 17);
+            this.lblta.TabIndex = 22;
+            // 
             // Seat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1003, 603);
+            this.Controls.Add(this.lblta);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -1215,5 +1227,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Label lblta;
     }
 }
