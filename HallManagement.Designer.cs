@@ -33,7 +33,7 @@
             this.lblHallName = new System.Windows.Forms.Label();
             this.lblTotalSeats = new System.Windows.Forms.Label();
             this.lblHallManagement = new System.Windows.Forms.Label();
-            this.txtHallId = new System.Windows.Forms.TextBox();
+            this.txtHallIDD = new System.Windows.Forms.TextBox();
             this.cmbTheatre = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -99,14 +99,14 @@
             this.lblHallManagement.TabIndex = 27;
             this.lblHallManagement.Text = "Hall Management";
             // 
-            // txtHallId
+            // txtHallIDD
             // 
-            this.txtHallId.Location = new System.Drawing.Point(194, 144);
-            this.txtHallId.Name = "txtHallId";
-            this.txtHallId.Size = new System.Drawing.Size(128, 22);
-            this.txtHallId.TabIndex = 28;
-            this.txtHallId.Text = "Auto Generated";
-            this.txtHallId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtHallIDD.Location = new System.Drawing.Point(194, 144);
+            this.txtHallIDD.Name = "txtHallIDD";
+            this.txtHallIDD.Size = new System.Drawing.Size(128, 22);
+            this.txtHallIDD.TabIndex = 28;
+            this.txtHallIDD.Text = "Auto Generated";
+            this.txtHallIDD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cmbTheatre
             // 
@@ -263,7 +263,7 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.cmbTheatre);
-            this.Controls.Add(this.txtHallId);
+            this.Controls.Add(this.txtHallIDD);
             this.Controls.Add(this.lblHallManagement);
             this.Controls.Add(this.lblTotalSeats);
             this.Controls.Add(this.lblHallName);
@@ -286,7 +286,7 @@
         private System.Windows.Forms.Label lblHallName;
         private System.Windows.Forms.Label lblTotalSeats;
         private System.Windows.Forms.Label lblHallManagement;
-        private System.Windows.Forms.TextBox txtHallId;
+        private System.Windows.Forms.TextBox txtHallIDD;
         private System.Windows.Forms.ComboBox cmbTheatre;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;

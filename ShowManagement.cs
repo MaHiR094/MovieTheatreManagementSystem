@@ -302,6 +302,26 @@ namespace MovieTheatreManagementSystem
         }
         private void dgvShowInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+           
+        }
+        private void ClearFields()
+        {
+            txtShowId.Text = "Auto Generated";
+            txtMovie.Clear();
+            txtShowPrice.Clear();
+            dtpShowDate.Value = DateTime.Now;
+            cmbtheatre.SelectedIndex = -1;
+            cmbHallNo.DataSource = null;
+            cmbHallNo.Items.Clear();
+            cmbTime.SelectedIndex = -1;
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+        }
+
+        private void dgvShowInfo_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
             if (e.RowIndex < 0) return;
 
             DataGridViewRow row = dgvShowInfo.Rows[e.RowIndex];
@@ -331,21 +351,6 @@ namespace MovieTheatreManagementSystem
                     break;
                 }
             }
-        }
-        private void ClearFields()
-        {
-            txtShowId.Text = "Auto Generated";
-            txtMovie.Clear();
-            txtShowPrice.Clear();
-            dtpShowDate.Value = DateTime.Now;
-            cmbtheatre.SelectedIndex = -1;
-            cmbHallNo.DataSource = null;
-            cmbHallNo.Items.Clear();
-            cmbTime.SelectedIndex = -1;
-        }
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            ClearFields();
         }
     }
 }

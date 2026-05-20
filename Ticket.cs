@@ -91,6 +91,9 @@ namespace MovieTheatreManagementSystem
             textBox5.Text = row["TicketStatus"].ToString();   // Ticket Status
         }
 
+        // =====================================================
+        // CLEAR ALL READ-ONLY FIELDS
+        // =====================================================
 
         private void ClearFields()
         {

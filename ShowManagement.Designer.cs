@@ -253,6 +253,7 @@
             this.dgvShowInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvShowInfo.Size = new System.Drawing.Size(853, 315);
             this.dgvShowInfo.TabIndex = 49;
+            this.dgvShowInfo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowInfo_CellDoubleClick);
             // 
             // txtMovie
             // 
