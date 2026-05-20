@@ -56,7 +56,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnUserinfo = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tblpnlBtns = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -66,7 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLOGO)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tblpnlBtns.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDB2
@@ -270,9 +270,9 @@
             this.btnLOG.ForeColor = System.Drawing.Color.White;
             this.btnLOG.Image = global::MovieTheatreManagementSystem.Properties.Resources.Logout64;
             this.btnLOG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLOG.Location = new System.Drawing.Point(3, 661);
+            this.btnLOG.Location = new System.Drawing.Point(3, 646);
             this.btnLOG.Name = "btnLOG";
-            this.btnLOG.Size = new System.Drawing.Size(272, 88);
+            this.btnLOG.Size = new System.Drawing.Size(272, 83);
             this.btnLOG.TabIndex = 9;
             this.btnLOG.Text = "Logout";
             this.btnLOG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -289,9 +289,9 @@
             this.btnPAY.ForeColor = System.Drawing.Color.White;
             this.btnPAY.Image = global::MovieTheatreManagementSystem.Properties.Resources.Payment64;
             this.btnPAY.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPAY.Location = new System.Drawing.Point(3, 567);
+            this.btnPAY.Location = new System.Drawing.Point(3, 557);
             this.btnPAY.Name = "btnPAY";
-            this.btnPAY.Size = new System.Drawing.Size(272, 88);
+            this.btnPAY.Size = new System.Drawing.Size(272, 83);
             this.btnPAY.TabIndex = 8;
             this.btnPAY.Text = "Payment";
             this.btnPAY.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -308,9 +308,9 @@
             this.btnTIk.ForeColor = System.Drawing.Color.White;
             this.btnTIk.Image = global::MovieTheatreManagementSystem.Properties.Resources.Ticket64;
             this.btnTIk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTIk.Location = new System.Drawing.Point(3, 473);
+            this.btnTIk.Location = new System.Drawing.Point(3, 468);
             this.btnTIk.Name = "btnTIk";
-            this.btnTIk.Size = new System.Drawing.Size(272, 88);
+            this.btnTIk.Size = new System.Drawing.Size(272, 83);
             this.btnTIk.TabIndex = 7;
             this.btnTIk.Text = "Ticket";
             this.btnTIk.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -329,7 +329,7 @@
             this.btnBK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBK.Location = new System.Drawing.Point(3, 379);
             this.btnBK.Name = "btnBK";
-            this.btnBK.Size = new System.Drawing.Size(272, 88);
+            this.btnBK.Size = new System.Drawing.Size(272, 83);
             this.btnBK.TabIndex = 6;
             this.btnBK.Text = "Booking";
             this.btnBK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -346,9 +346,9 @@
             this.btnSH.ForeColor = System.Drawing.Color.White;
             this.btnSH.Image = global::MovieTheatreManagementSystem.Properties.Resources.Shows64;
             this.btnSH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSH.Location = new System.Drawing.Point(3, 285);
+            this.btnSH.Location = new System.Drawing.Point(3, 290);
             this.btnSH.Name = "btnSH";
-            this.btnSH.Size = new System.Drawing.Size(272, 88);
+            this.btnSH.Size = new System.Drawing.Size(272, 83);
             this.btnSH.TabIndex = 5;
             this.btnSH.Text = "Shows";
             this.btnSH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -365,9 +365,9 @@
             this.btnHL.ForeColor = System.Drawing.Color.White;
             this.btnHL.Image = global::MovieTheatreManagementSystem.Properties.Resources.Hall64;
             this.btnHL.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHL.Location = new System.Drawing.Point(3, 191);
+            this.btnHL.Location = new System.Drawing.Point(3, 201);
             this.btnHL.Name = "btnHL";
-            this.btnHL.Size = new System.Drawing.Size(272, 88);
+            this.btnHL.Size = new System.Drawing.Size(272, 83);
             this.btnHL.TabIndex = 4;
             this.btnHL.Text = "Hall";
             this.btnHL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -384,9 +384,9 @@
             this.btnTRE.ForeColor = System.Drawing.Color.White;
             this.btnTRE.Image = global::MovieTheatreManagementSystem.Properties.Resources.Theatre64;
             this.btnTRE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTRE.Location = new System.Drawing.Point(3, 97);
+            this.btnTRE.Location = new System.Drawing.Point(3, 112);
             this.btnTRE.Name = "btnTRE";
-            this.btnTRE.Size = new System.Drawing.Size(272, 88);
+            this.btnTRE.Size = new System.Drawing.Size(272, 83);
             this.btnTRE.TabIndex = 3;
             this.btnTRE.Text = "Theatre";
             this.btnTRE.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -403,9 +403,9 @@
             this.btnDB.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDB.Image = global::MovieTheatreManagementSystem.Properties.Resources.dashboard64;
             this.btnDB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDB.Location = new System.Drawing.Point(3, 3);
+            this.btnDB.Location = new System.Drawing.Point(3, 23);
             this.btnDB.Name = "btnDB";
-            this.btnDB.Size = new System.Drawing.Size(272, 88);
+            this.btnDB.Size = new System.Drawing.Size(272, 83);
             this.btnDB.TabIndex = 0;
             this.btnDB.Text = "Dashboard";
             this.btnDB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -447,31 +447,44 @@
             this.btnUserinfo.UseWaitCursor = true;
             this.btnUserinfo.Click += new System.EventHandler(this.btnUserinfo_Click);
             // 
-            // tableLayoutPanel1
+            // tblpnlBtns
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.btnLOG, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.btnBK, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnPAY, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.btnTIk, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.btnTRE, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnDB, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnHL, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnSH, 0, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 56);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(278, 752);
-            this.tableLayoutPanel1.TabIndex = 27;
+            this.tblpnlBtns.ColumnCount = 1;
+            this.tblpnlBtns.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblpnlBtns.Controls.Add(this.btnLOG, 0, 8);
+            this.tblpnlBtns.Controls.Add(this.btnBK, 0, 5);
+            this.tblpnlBtns.Controls.Add(this.btnPAY, 0, 7);
+            this.tblpnlBtns.Controls.Add(this.btnTIk, 0, 6);
+            this.tblpnlBtns.Controls.Add(this.btnTRE, 0, 2);
+            this.tblpnlBtns.Controls.Add(this.btnDB, 0, 1);
+            this.tblpnlBtns.Controls.Add(this.btnHL, 0, 3);
+            this.tblpnlBtns.Controls.Add(this.btnSH, 0, 4);
+            this.tblpnlBtns.Location = new System.Drawing.Point(12, 56);
+            this.tblpnlBtns.Name = "tblpnlBtns";
+            this.tblpnlBtns.RowCount = 10;
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblpnlBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblpnlBtns.Size = new System.Drawing.Size(278, 752);
+            this.tblpnlBtns.TabIndex = 27;
+            this.tblpnlBtns.UseWaitCursor = true;
             // 
             // Home
             // 
@@ -481,7 +494,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1516, 844);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tblpnlBtns);
             this.Controls.Add(this.plhome);
             this.Controls.Add(this.btnUserinfo);
             this.Controls.Add(this.panel5);
@@ -518,7 +531,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLOGO)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tblpnlBtns.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -553,7 +566,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnUserinfo;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tblpnlBtns;
     }
 }
 

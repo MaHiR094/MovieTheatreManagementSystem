@@ -31,17 +31,36 @@ namespace MovieTheatreManagementSystem
 
             if (role == 2) 
             {
-                btnTRE.Visible = false; 
-                btnHL.Visible = false;  
+                HideButtonRow(btnTRE);
+                HideButtonRow(btnHL);
             }
             else if (role == 3)
             {
-                btnTRE.Visible = false;  
-                btnHL.Visible = false; 
-                btnSH.Visible = false;  
+                HideButtonRow(btnTRE);
+                HideButtonRow(btnHL);
+                HideButtonRow(btnSH);
+                HideButtonRow(btnUserinfo);
             }
         }
 
+        private void HideButtonRow(Button button)
+        {
+            if (!tblpnlBtns.Controls.Contains(button)) return;
+
+            int row = tblpnlBtns.GetRow(button);
+            if (row < 0) return;
+
+            tblpnlBtns.Controls.Remove(button);
+
+            if (tblpnlBtns.RowCount <= row) tblpnlBtns.RowCount = row + 1;
+            while (tblpnlBtns.RowStyles.Count <= row)
+                tblpnlBtns.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
+
+            tblpnlBtns.RowStyles[row].SizeType = SizeType.Absolute;
+            tblpnlBtns.RowStyles[row].Height = 0F;
+
+            tblpnlBtns.PerformLayout();
+        }
         private void btnBK_Click(object sender, EventArgs e)
         {
             plhome.Visible = true;
