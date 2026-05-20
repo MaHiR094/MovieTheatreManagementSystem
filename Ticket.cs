@@ -21,48 +21,55 @@ namespace MovieTheatreManagementSystem
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            try
             {
-                MessageBox.Show("Please enter a Ticket ID.",
-                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (string.IsNullOrWhiteSpace(textBox1.Text))
+                {
+                    MessageBox.Show("Please enter a Ticket ID.",
+                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string ticketId = textBox1.Text.Trim();
+
+                string query = "SELECT t.TicketId, t.BookingId, t.TicketPrice, t.TicketStatus, "
+                             + "t.SeatNumber, s.MovieName, h.HallName "
+                             + "FROM Ticket t "
+                             + "INNER JOIN Booking b ON t.BookingId = b.BookingId "
+                             + "INNER JOIN Shows s ON t.ShowId = s.ShowId "
+                             + "INNER JOIN Hall h ON s.HallId = h.HallId "
+                             + "WHERE t.TicketId = '" + ticketId + "'";
+
+                ResultSet result = db.GetQueryData(query);
+
+                if (result.HasError)
+                {
+                    MessageBox.Show("Error searching ticket: " + result.Message,
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (result.Data == null || result.Data.Rows.Count == 0)
+                {
+                    MessageBox.Show("No ticket found with ID: " + ticketId,
+                        "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearFields();
+                    return;
+                }
+
+                DataRow row = result.Data.Rows[0];
+
+                textBox2.Text = row["BookingId"].ToString();
+                textBox4.Text = row["HallName"].ToString();
+                textBox3.Text = row["SeatNumber"].ToString();
+                textBox8.Text = row["MovieName"].ToString();
+                textBox7.Text = row["TicketPrice"].ToString();
+                textBox5.Text = row["TicketStatus"].ToString();
             }
-
-            string ticketId = textBox1.Text.Trim();
-
-            string query = "SELECT t.TicketId, t.BookingId, t.TicketPrice, t.TicketStatus, "
-                         + "t.SeatNumber, s.MovieName, h.HallName "
-                         + "FROM Ticket t "
-                         + "INNER JOIN Booking b ON t.BookingId = b.BookingId "
-                         + "INNER JOIN Shows s ON t.ShowId = s.ShowId "
-                         + "INNER JOIN Hall h ON s.HallId = h.HallId "
-                         + "WHERE t.TicketId = '" + ticketId + "'";
-
-            ResultSet result = db.GetQueryData(query);
-
-            if (result.HasError)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error searching ticket: " + result.Message,
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                MessageBox.Show(ex.Message);
             }
-
-            if (result.Data == null || result.Data.Rows.Count == 0)
-            {
-                MessageBox.Show("No ticket found with ID: " + ticketId,
-                    "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ClearFields();
-                return;
-            }
-
-            DataRow row = result.Data.Rows[0];
-
-            textBox2.Text = row["BookingId"].ToString();
-            textBox4.Text = row["HallName"].ToString();
-            textBox3.Text = row["SeatNumber"].ToString();
-            textBox8.Text = row["MovieName"].ToString();
-            textBox7.Text = row["TicketPrice"].ToString();
-            textBox5.Text = row["TicketStatus"].ToString();
         }
 
         private void ClearFields()
