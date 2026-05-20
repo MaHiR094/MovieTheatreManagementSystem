@@ -422,11 +422,6 @@ namespace MovieTheatreManagementSystem
             selectedSeats.Clear();
             UpdateSelectedSeatsDisplay();
         }
-
-        // =====================================================
-        // HELPER: BUTTON NAME → SEAT ID
-        // =====================================================
-
         private string GetSeatIdFromButtonName(string buttonName)
         {
             return buttonName.Replace("btan", "").ToUpper();
