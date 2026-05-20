@@ -25,41 +25,50 @@ namespace MovieTheatreManagementSystem
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            string username = txtemail.Text;
-            string password = txtpassword.Text;
+            string username = txtemail.Text.Trim();
+            string password = txtpassword.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Please enter username and password.");
+                return;
+            }
 
             try
             {
                 DBAccessHelper db = new DBAccessHelper();
 
-                string query = "Select UserName, Password from Users where UserName = '"
-                                + username + "' and Password = '" + password + "'";
+                string query = "SELECT UserId, UserName, UserTypeId FROM Users WHERE UserName = '"
+                             + username + "' AND Password = '" + password + "'";
 
                 ResultSet result = db.GetQueryData(query);
 
-
                 if (result.HasError)
                 {
-                    MessageBox.Show("Database Error");
+                    MessageBox.Show("Database error: " + result.Message);
                     return;
                 }
 
                 if (result.Data.Rows.Count == 0)
                 {
-                    MessageBox.Show("Invalid Login");
+                    MessageBox.Show("Invalid username or password.");
                     return;
                 }
 
-                MessageBox.Show("Welcome");
+                SessionManager.UserId = Convert.ToInt32(result.Data.Rows[0]["UserId"]);
+                SessionManager.UserName = result.Data.Rows[0]["UserName"].ToString();
+                SessionManager.UserTypeId = Convert.ToInt32(result.Data.Rows[0]["UserTypeId"]);
+
+                MessageBox.Show("Welcome, " + SessionManager.UserName + "!");
 
                 Home form = new Home();
                 this.Hide();
                 form.ShowDialog();
                 this.Show();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Login Error");
+                MessageBox.Show("Login Error: " + ex.Message);
             }
         }
 
