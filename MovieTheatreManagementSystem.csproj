@@ -87,6 +87,7 @@
     <Compile Include="Seat.Designer.cs">
       <DependentUpon>Seat.cs</DependentUpon>
     </Compile>
+    <Compile Include="SessionManager.cs" />
     <Compile Include="ShowManagement.cs">
       <SubType>Form</SubType>
     </Compile>
