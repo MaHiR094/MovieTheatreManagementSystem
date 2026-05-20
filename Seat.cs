@@ -294,18 +294,31 @@ namespace MovieTheatreManagementSystem
 
             if (allSuccess)
             {
-                MessageBox.Show(
-                    "Booking confirmed!\n" +
-                    "Booking ID : " + bookingId + "\n" +
-                    "Session    : #" + currentBookingGroupId + "\n" +
-                    "Ticket No. : " +
-                    "Seats      : " + string.Join(", ", selectedSeats) + "\n" +
-                    "Total      : BDT " + (ticketPrice * selectedSeats.Count).ToString("F2"),
-                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string ticketIdQuery = "SELECT TOP 1 TicketId FROM Ticket WHERE BookingId = '" + bookingId + "'";
+                ResultSet ticketIdResult = db.GetQueryData(ticketIdQuery);
 
-                selectedSeats.Clear();
-                UpdateSelectedSeatsDisplay();
-                LoadSeatAvailability(selectedShow.ShowId);
+                if (!ticketIdResult.HasError && ticketIdResult.Data != null && ticketIdResult.Data.Rows.Count > 0)
+                {
+                    string ticketId = ticketIdResult.Data.Rows[0]["TicketId"].ToString();
+
+                    MessageBox.Show(
+                        "Booking confirmed!\n" +
+                        "Booking ID : " + bookingId + "\n" +
+                        "Session    : #" + currentBookingGroupId + "\n" +
+                        "Ticket No. : " + ticketId + "\n" +
+                        "Seats      : " + string.Join(", ", selectedSeats) + "\n" +
+                        "Total      : BDT " + (ticketPrice * selectedSeats.Count).ToString("F2"),
+                        "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    selectedSeats.Clear();
+                    UpdateSelectedSeatsDisplay();
+                    LoadSeatAvailability(selectedShow.ShowId);
+                }
+                else
+                {
+                    MessageBox.Show("Could not retrieve Ticket ID.",
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
