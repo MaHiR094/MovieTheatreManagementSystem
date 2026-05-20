@@ -56,6 +56,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnUserinfo = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -65,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLOGO)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDB2
@@ -249,10 +251,11 @@
             // pbLOGO
             // 
             this.pbLOGO.BackgroundImage = global::MovieTheatreManagementSystem.Properties.Resources.LOGO60;
+            this.pbLOGO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbLOGO.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.pbLOGO.Location = new System.Drawing.Point(58, 10);
+            this.pbLOGO.Location = new System.Drawing.Point(118, 12);
             this.pbLOGO.Name = "pbLOGO";
-            this.pbLOGO.Size = new System.Drawing.Size(60, 70);
+            this.pbLOGO.Size = new System.Drawing.Size(74, 38);
             this.pbLOGO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLOGO.TabIndex = 10;
             this.pbLOGO.TabStop = false;
@@ -267,9 +270,9 @@
             this.btnLOG.ForeColor = System.Drawing.Color.White;
             this.btnLOG.Image = global::MovieTheatreManagementSystem.Properties.Resources.Logout64;
             this.btnLOG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLOG.Location = new System.Drawing.Point(1, 738);
+            this.btnLOG.Location = new System.Drawing.Point(3, 661);
             this.btnLOG.Name = "btnLOG";
-            this.btnLOG.Size = new System.Drawing.Size(231, 90);
+            this.btnLOG.Size = new System.Drawing.Size(272, 88);
             this.btnLOG.TabIndex = 9;
             this.btnLOG.Text = "Logout";
             this.btnLOG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -286,9 +289,9 @@
             this.btnPAY.ForeColor = System.Drawing.Color.White;
             this.btnPAY.Image = global::MovieTheatreManagementSystem.Properties.Resources.Payment64;
             this.btnPAY.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPAY.Location = new System.Drawing.Point(1, 644);
+            this.btnPAY.Location = new System.Drawing.Point(3, 567);
             this.btnPAY.Name = "btnPAY";
-            this.btnPAY.Size = new System.Drawing.Size(231, 90);
+            this.btnPAY.Size = new System.Drawing.Size(272, 88);
             this.btnPAY.TabIndex = 8;
             this.btnPAY.Text = "Payment";
             this.btnPAY.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -305,9 +308,9 @@
             this.btnTIk.ForeColor = System.Drawing.Color.White;
             this.btnTIk.Image = global::MovieTheatreManagementSystem.Properties.Resources.Ticket64;
             this.btnTIk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTIk.Location = new System.Drawing.Point(1, 551);
+            this.btnTIk.Location = new System.Drawing.Point(3, 473);
             this.btnTIk.Name = "btnTIk";
-            this.btnTIk.Size = new System.Drawing.Size(231, 90);
+            this.btnTIk.Size = new System.Drawing.Size(272, 88);
             this.btnTIk.TabIndex = 7;
             this.btnTIk.Text = "Ticket";
             this.btnTIk.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -324,9 +327,9 @@
             this.btnBK.ForeColor = System.Drawing.Color.White;
             this.btnBK.Image = global::MovieTheatreManagementSystem.Properties.Resources.Booking64;
             this.btnBK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBK.Location = new System.Drawing.Point(1, 458);
+            this.btnBK.Location = new System.Drawing.Point(3, 379);
             this.btnBK.Name = "btnBK";
-            this.btnBK.Size = new System.Drawing.Size(231, 90);
+            this.btnBK.Size = new System.Drawing.Size(272, 88);
             this.btnBK.TabIndex = 6;
             this.btnBK.Text = "Booking";
             this.btnBK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -343,9 +346,9 @@
             this.btnSH.ForeColor = System.Drawing.Color.White;
             this.btnSH.Image = global::MovieTheatreManagementSystem.Properties.Resources.Shows64;
             this.btnSH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSH.Location = new System.Drawing.Point(1, 366);
+            this.btnSH.Location = new System.Drawing.Point(3, 285);
             this.btnSH.Name = "btnSH";
-            this.btnSH.Size = new System.Drawing.Size(231, 90);
+            this.btnSH.Size = new System.Drawing.Size(272, 88);
             this.btnSH.TabIndex = 5;
             this.btnSH.Text = "Shows";
             this.btnSH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -362,9 +365,9 @@
             this.btnHL.ForeColor = System.Drawing.Color.White;
             this.btnHL.Image = global::MovieTheatreManagementSystem.Properties.Resources.Hall64;
             this.btnHL.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHL.Location = new System.Drawing.Point(1, 271);
+            this.btnHL.Location = new System.Drawing.Point(3, 191);
             this.btnHL.Name = "btnHL";
-            this.btnHL.Size = new System.Drawing.Size(231, 90);
+            this.btnHL.Size = new System.Drawing.Size(272, 88);
             this.btnHL.TabIndex = 4;
             this.btnHL.Text = "Hall";
             this.btnHL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -381,9 +384,9 @@
             this.btnTRE.ForeColor = System.Drawing.Color.White;
             this.btnTRE.Image = global::MovieTheatreManagementSystem.Properties.Resources.Theatre64;
             this.btnTRE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTRE.Location = new System.Drawing.Point(1, 176);
+            this.btnTRE.Location = new System.Drawing.Point(3, 97);
             this.btnTRE.Name = "btnTRE";
-            this.btnTRE.Size = new System.Drawing.Size(231, 90);
+            this.btnTRE.Size = new System.Drawing.Size(272, 88);
             this.btnTRE.TabIndex = 3;
             this.btnTRE.Text = "Theatre";
             this.btnTRE.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -400,9 +403,9 @@
             this.btnDB.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDB.Image = global::MovieTheatreManagementSystem.Properties.Resources.dashboard64;
             this.btnDB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDB.Location = new System.Drawing.Point(1, 83);
+            this.btnDB.Location = new System.Drawing.Point(3, 3);
             this.btnDB.Name = "btnDB";
-            this.btnDB.Size = new System.Drawing.Size(231, 90);
+            this.btnDB.Size = new System.Drawing.Size(272, 88);
             this.btnDB.TabIndex = 0;
             this.btnDB.Text = "Dashboard";
             this.btnDB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -441,7 +444,34 @@
             this.btnUserinfo.TabIndex = 26;
             this.btnUserinfo.Text = "User Info";
             this.btnUserinfo.UseVisualStyleBackColor = false;
+            this.btnUserinfo.UseWaitCursor = true;
             this.btnUserinfo.Click += new System.EventHandler(this.btnUserinfo_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.btnLOG, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.btnBK, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnPAY, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.btnTIk, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btnTRE, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnDB, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnHL, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnSH, 0, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 56);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(278, 752);
+            this.tableLayoutPanel1.TabIndex = 27;
             // 
             // Home
             // 
@@ -451,6 +481,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1516, 844);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.plhome);
             this.Controls.Add(this.btnUserinfo);
             this.Controls.Add(this.panel5);
@@ -458,6 +489,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pbLOGO);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblDB1);
             this.Controls.Add(this.lblDB2);
@@ -465,15 +497,6 @@
             this.Controls.Add(this.PB3);
             this.Controls.Add(this.PB2);
             this.Controls.Add(this.PB1);
-            this.Controls.Add(this.pbLOGO);
-            this.Controls.Add(this.btnLOG);
-            this.Controls.Add(this.btnPAY);
-            this.Controls.Add(this.btnTIk);
-            this.Controls.Add(this.btnBK);
-            this.Controls.Add(this.btnSH);
-            this.Controls.Add(this.btnHL);
-            this.Controls.Add(this.btnTRE);
-            this.Controls.Add(this.btnDB);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Aquamarine;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -495,6 +518,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLOGO)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -529,6 +553,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnUserinfo;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 
