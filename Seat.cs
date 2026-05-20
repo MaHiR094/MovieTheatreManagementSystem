@@ -360,6 +360,7 @@ namespace MovieTheatreManagementSystem
                     "Booking confirmed!\n" +
                     "Booking ID : " + bookingId + "\n" +
                     "Session    : #" + currentBookingGroupId + "\n" +
+                    "Ticket No. : " + 
                     "Seats      : " + string.Join(", ", selectedSeats) + "\n" +
                     "Total      : BDT " + (ticketPrice * selectedSeats.Count).ToString("F2"),
                     "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
