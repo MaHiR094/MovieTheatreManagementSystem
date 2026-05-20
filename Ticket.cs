@@ -6,15 +6,7 @@ namespace MovieTheatreManagementSystem
 {
     public partial class Ticket : Form
     {
-        // =====================================================
-        // FIELDS
-        // =====================================================
-
         private DBAccessHelper db = new DBAccessHelper();
-
-        // =====================================================
-        // CONSTRUCTOR
-        // =====================================================
 
         public Ticket()
         {
@@ -22,18 +14,10 @@ namespace MovieTheatreManagementSystem
             this.btnSearch.Click += new EventHandler(this.btnSearch_Click);
         }
 
-        // =====================================================
-        // FORM LOAD
-        // =====================================================
-
         private void Ticket_Load(object sender, EventArgs e)
         {
             ClearFields();
         }
-
-        // =====================================================
-        // SEARCH BUTTON — looks up by Ticket ID
-        // =====================================================
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -45,11 +29,6 @@ namespace MovieTheatreManagementSystem
             }
 
             string ticketId = textBox1.Text.Trim();
-
-            // ---------------------------------------------------
-            // Query joins Ticket → Booking → Shows → Hall
-            // to get all details in one shot
-            // ---------------------------------------------------
 
             string query = "SELECT t.TicketId, t.BookingId, t.TicketPrice, t.TicketStatus, "
                          + "t.SeatNumber, s.MovieName, h.HallName "
@@ -76,24 +55,15 @@ namespace MovieTheatreManagementSystem
                 return;
             }
 
-            // ---------------------------------------------------
-            // Fill in the fields
-            // ---------------------------------------------------
-
             DataRow row = result.Data.Rows[0];
 
-            // textBox1 = Ticket ID (already filled by user, keep it)
-            textBox2.Text = row["BookingId"].ToString();      // Booking ID
-            textBox4.Text = row["HallName"].ToString();       // Hall
-            textBox3.Text = row["SeatNumber"].ToString();     // Seat No.
-            textBox8.Text = row["MovieName"].ToString();      // Movie
-            textBox7.Text = row["TicketPrice"].ToString();    // Total Amount
-            textBox5.Text = row["TicketStatus"].ToString();   // Ticket Status
+            textBox2.Text = row["BookingId"].ToString();
+            textBox4.Text = row["HallName"].ToString();
+            textBox3.Text = row["SeatNumber"].ToString();
+            textBox8.Text = row["MovieName"].ToString();
+            textBox7.Text = row["TicketPrice"].ToString();
+            textBox5.Text = row["TicketStatus"].ToString();
         }
-
-        // =====================================================
-        // CLEAR ALL READ-ONLY FIELDS
-        // =====================================================
 
         private void ClearFields()
         {

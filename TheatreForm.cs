@@ -12,10 +12,6 @@ namespace MovieTheatreManagementSystem
             InitializeComponent();
         }
 
-        // =====================================================
-        // HELPERS
-        // =====================================================
-
         private void LoadTheatres()
         {
             string query = "SELECT * FROM Theatre";
@@ -59,18 +55,10 @@ namespace MovieTheatreManagementSystem
             return true;
         }
 
-        // =====================================================
-        // FORM LOAD
-        // =====================================================
-
         private void TheatreForm_Load(object sender, EventArgs e)
         {
             LoadTheatres();
         }
-
-        // =====================================================
-        // ADD
-        // =====================================================
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -89,10 +77,6 @@ namespace MovieTheatreManagementSystem
             LoadTheatres();
         }
 
-        // =====================================================
-        // UPDATE
-        // =====================================================
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (dgvTheatreInfo.CurrentRow == null)
@@ -103,8 +87,7 @@ namespace MovieTheatreManagementSystem
 
             if (!ValidateInputs()) return;
 
-            int theatreId = Convert.ToInt32(
-                dgvTheatreInfo.CurrentRow.Cells["TheatreId"].Value);
+            int theatreId = Convert.ToInt32(dgvTheatreInfo.CurrentRow.Cells["TheatreId"].Value);
 
             string query = "UPDATE Theatre SET " +
                            "TheatreName = '" + txtTheatreName.Text + "', " +
@@ -121,10 +104,6 @@ namespace MovieTheatreManagementSystem
             LoadTheatres();
         }
 
-        // =====================================================
-        // DELETE — cascades through Hall → Shows → Tickets → Payments
-        // =====================================================
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvTheatreInfo.CurrentRow == null)
@@ -133,11 +112,8 @@ namespace MovieTheatreManagementSystem
                 return;
             }
 
-            int theatreId = Convert.ToInt32(
-                dgvTheatreInfo.CurrentRow.Cells["TheatreId"].Value);
-
-            string theatreName = dgvTheatreInfo.CurrentRow
-                .Cells["TheatreName"].Value.ToString();
+            int theatreId = Convert.ToInt32(dgvTheatreInfo.CurrentRow.Cells["TheatreId"].Value);
+            string theatreName = dgvTheatreInfo.CurrentRow.Cells["TheatreName"].Value.ToString();
 
             DialogResult confirm = MessageBox.Show(
                 "Deleting '" + theatreName + "' will also delete all its\n" +
@@ -146,49 +122,32 @@ namespace MovieTheatreManagementSystem
 
             if (confirm != DialogResult.Yes) return;
 
-            // Get all halls under this theatre
-            ResultSet halls = db.GetQueryData(
-                "SELECT HallId FROM Hall WHERE TheatreId = " + theatreId);
+            ResultSet halls = db.GetQueryData("SELECT HallId FROM Hall WHERE TheatreId = " + theatreId);
 
             if (!halls.HasError && halls.Data != null)
             {
                 foreach (System.Data.DataRow hallRow in halls.Data.Rows)
                 {
                     int hallId = Convert.ToInt32(hallRow["HallId"]);
-
-                    // Get all shows under this hall
-                    ResultSet shows = db.GetQueryData(
-                        "SELECT ShowId FROM Shows WHERE HallId = " + hallId);
+                    ResultSet shows = db.GetQueryData("SELECT ShowId FROM Shows WHERE HallId = " + hallId);
 
                     if (!shows.HasError && shows.Data != null)
                     {
                         foreach (System.Data.DataRow showRow in shows.Data.Rows)
                         {
                             int showId = Convert.ToInt32(showRow["ShowId"]);
-
-                            // Delete payments → tickets for this show
-                            db.ExecuteNonQuery(
-                                "DELETE FROM Payment WHERE TicketId IN " +
-                                "(SELECT TicketId FROM Ticket WHERE ShowId = " + showId + ")");
-
-                            db.ExecuteNonQuery(
-                                "DELETE FROM Ticket WHERE ShowId = " + showId);
+                            db.ExecuteNonQuery("DELETE FROM Payment WHERE TicketId IN (SELECT TicketId FROM Ticket WHERE ShowId = " + showId + ")");
+                            db.ExecuteNonQuery("DELETE FROM Ticket WHERE ShowId = " + showId);
                         }
                     }
 
-                    // Clean up orphan bookings, shows, then hall
-                    db.ExecuteNonQuery(
-                        "DELETE FROM Booking WHERE BookingId NOT IN " +
-                        "(SELECT DISTINCT BookingId FROM Ticket)");
-
+                    db.ExecuteNonQuery("DELETE FROM Booking WHERE BookingId NOT IN (SELECT DISTINCT BookingId FROM Ticket)");
                     db.ExecuteNonQuery("DELETE FROM Shows WHERE HallId = " + hallId);
                     db.ExecuteNonQuery("DELETE FROM Hall WHERE HallId = " + hallId);
                 }
             }
 
-            // Finally delete the theatre
-            ResultSet result = db.ExecuteNonQuery(
-                "DELETE FROM Theatre WHERE TheatreId = " + theatreId);
+            ResultSet result = db.ExecuteNonQuery("DELETE FROM Theatre WHERE TheatreId = " + theatreId);
 
             if (result.HasError) { MessageBox.Show(result.Message, "Error"); return; }
 
@@ -196,10 +155,6 @@ namespace MovieTheatreManagementSystem
             ClearFields();
             LoadTheatres();
         }
-
-        // =====================================================
-        // GRID CLICK — fill fields
-        // =====================================================
 
         private void dgvTheatreInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -210,10 +165,6 @@ namespace MovieTheatreManagementSystem
             txtContact.Text = row.Cells["Contact"].Value.ToString();
             cmbLocation.Text = row.Cells["Location"].Value.ToString();
         }
-
-        // =====================================================
-        // CLEAR BUTTON
-        // =====================================================
 
         private void btnClear_Click(object sender, EventArgs e)
         {
