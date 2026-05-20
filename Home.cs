@@ -21,6 +21,25 @@ namespace MovieTheatreManagementSystem
         private void Home_Load(object sender, EventArgs e)
         {
             plhome.Visible = false;
+            ApplyRolePermissions();
+        }
+
+        private void ApplyRolePermissions()
+        {
+            int role = SessionManager.UserTypeId;
+            
+
+            if (role == 2) 
+            {
+                btnTRE.Visible = false; 
+                btnHL.Visible = false;  
+            }
+            else if (role == 3)
+            {
+                btnTRE.Visible = false;  
+                btnHL.Visible = false; 
+                btnSH.Visible = false;  
+            }
         }
 
         private void btnBK_Click(object sender, EventArgs e)
