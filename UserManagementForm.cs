@@ -88,7 +88,7 @@ namespace Movie_Ticket_Management_System
                     return;
                 }
 
-                int usertypeid = cmbut.SelectedIndex + 2;
+                int usertypeid = cmbut.SelectedIndex + 3;
 
                 DBAccessHelper db = new DBAccessHelper();
 

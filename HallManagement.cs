@@ -246,8 +246,7 @@ namespace MovieTheatreManagementSystem
                             "(SELECT TicketId FROM Ticket WHERE ShowId = " + showId + ")";
                         db.ExecuteNonQuery(deletePayments);
 
-                        string deleteTickets =
-                            "DELETE FROM Ticket WHERE ShowId = " + showId;
+                        string deleteTickets = "DELETE FROM Ticket WHERE ShowId = " + showId;
                         db.ExecuteNonQuery(deleteTickets);
                     }
                 }

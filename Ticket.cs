@@ -11,7 +11,6 @@ namespace MovieTheatreManagementSystem
         public Ticket()
         {
             InitializeComponent();
-            this.btnSearch.Click += new EventHandler(this.btnSearch_Click);
         }
 
         private void Ticket_Load(object sender, EventArgs e)

@@ -27,7 +27,6 @@ namespace MovieTheatreManagementSystem
         private void ApplyRolePermissions()
         {
             int role = SessionManager.UserTypeId;
-            
 
             if (role == 2) 
             {

@@ -246,7 +246,7 @@ namespace MovieTheatreManagementSystem
             {
                 lblsele.Text = string.Join(", ", selectedSeats);
                 decimal total = ticketPrice * selectedSeats.Count;
-                lbltotalprice.Text = "Total Amount: BDT " + total.ToString("F2");
+                lblta.Text = total.ToString();
             }
         }
 
@@ -370,8 +370,7 @@ namespace MovieTheatreManagementSystem
 
             foreach (Control ctrl in panel1.Controls)
             {
-                if (ctrl is Button btn && btn.Name.StartsWith("btan")
-                    && btn.BackColor == Color.Yellow)
+                if (ctrl is Button btn && btn.Name.StartsWith("btan") && btn.BackColor == Color.Yellow)
                 {
                     btn.BackColor = Color.Lime;
                 }

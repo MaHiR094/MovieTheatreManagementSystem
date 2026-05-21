@@ -81,10 +81,10 @@ namespace MovieTheatreManagementSystem
         {
             try
             {
-                string username = txtUsername.Text.Trim();
-                string password = txtPass.Text.Trim();
-                string email = txtEmail.Text.Trim();
-                string phone = txtPhone.Text.Trim();
+                string username = txtUsername.Text;
+                string password = txtPass.Text;
+                string email = txtEmail.Text;
+                string phone = txtPhone.Text;
 
                 if (string.IsNullOrWhiteSpace(username))
                 {
@@ -144,20 +144,19 @@ namespace MovieTheatreManagementSystem
                         "INSERT INTO Users " +
                         "(UserName, Password, Email, Phone, UserTypeId) " +
                         "VALUES (" +
-                        "'" + username.Replace("'", "''") + "'," +
-                        "'" + password.Replace("'", "''") + "'," +
-                        "'" + email.Replace("'", "''") + "'," +
+                        "'" + username + "'," +
+                        "'" + password+ "'," +
+                        "'" + email+ "'," +
                         "'" + phone + "'," +
                         roleId + ")";
                 }
-
                 else
                 {
                     query =
                         "UPDATE Users SET " +
-                        "UserName = '" + username.Replace("'", "''") + "', " +
-                        "Password = '" + password.Replace("'", "''") + "', " +
-                        "Email = '" + email.Replace("'", "''") + "', " +
+                        "UserName = '" + username+ "', " +
+                        "Password = '" + password + "', " +
+                        "Email = '" + email+ "', " +
                         "Phone = '" + phone + "', " +
                         "UserTypeId = " + roleId + " " +
                         "WHERE UserId = " + txtId.Text;
@@ -200,8 +199,7 @@ namespace MovieTheatreManagementSystem
 
                 if (result == DialogResult.Yes)
                 {
-                    string query =
-                        "DELETE FROM Users WHERE UserId = " + txtId.Text;
+                    string query ="DELETE FROM Users WHERE UserId = " + txtId.Text;
 
                     dbConnection(query);
 
@@ -217,9 +215,7 @@ namespace MovieTheatreManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-        private void dataGridView1_CellDoubleClick(
-            object sender,
-            DataGridViewCellEventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender,DataGridViewCellEventArgs e)
         {
             try
             {

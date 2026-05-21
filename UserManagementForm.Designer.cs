@@ -98,7 +98,6 @@
             this.cmbut.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbut.FormattingEnabled = true;
             this.cmbut.Items.AddRange(new object[] {
-            "Manager",
             "Staff"});
             this.cmbut.Location = new System.Drawing.Point(870, 159);
             this.cmbut.Margin = new System.Windows.Forms.Padding(4);
@@ -268,9 +267,9 @@
             this.label1.Location = new System.Drawing.Point(43, 26);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 29);
+            this.label1.Size = new System.Drawing.Size(201, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "User Management";
+            this.label1.Text = "Create New User";
             // 
             // UserManagementForm
             // 

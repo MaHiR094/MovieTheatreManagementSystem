@@ -25,8 +25,8 @@ namespace MovieTheatreManagementSystem
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            string username = txtemail.Text.Trim();
-            string password = txtpassword.Text.Trim();
+            string username = txtemail.Text;
+            string password = txtpassword.Text;
 
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
@@ -74,13 +74,6 @@ namespace MovieTheatreManagementSystem
 
         private void btnnewuser_Click(object sender, EventArgs e)
         {
-            if (SessionManager.UserTypeId != 0 && SessionManager.UserTypeId != 1)
-            {
-                MessageBox.Show("Only Admins can create new users.",
-                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             UserManagementForm form = new UserManagementForm();
             this.Hide();
             form.ShowDialog();
